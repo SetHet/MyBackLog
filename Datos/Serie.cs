@@ -8,6 +8,7 @@ namespace Negocio
 {
     public class Serie
     {
+        int id_contenido;
         int tiempo_capitulo;
         int capitulos_temporada;
         int temporada;
@@ -19,10 +20,11 @@ namespace Negocio
         public int Temporada { get => temporada; set => temporada = value; }
         public int Capitulo { get => capitulo; set => capitulo = value; }
         public int Minuto { get => minuto; set => minuto = value; }
+        public int Id_contenido { get => id_contenido; set => id_contenido = value; }
 
         public override string ToString()
         {
-            return $"duracion capitulo: {Tiempo_capitulo}, capitulos temporada: {Capitulos_temporada}, temporada: {Temporada}, capitulo: {Capitulo}, minuto: {Minuto}";
+            return $"id contenido: {id_contenido}, duracion capitulo: {Tiempo_capitulo}, capitulos temporada: {Capitulos_temporada}, temporada: {Temporada}, capitulo: {Capitulo}, minuto: {Minuto}";
         }
     }
 }
