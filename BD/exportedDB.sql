@@ -69,9 +69,8 @@ CREATE TABLE IF NOT EXISTS "nota" (
 );
 INSERT INTO "progresion" ("id_progresion","nombre_estado","descripcion") VALUES (0,'No Iniciado','Aun no comienza a consumir el contenido'),
  (1,'Terminado','Se ha consumido el contenido'),
- (2,'En Progreso','Se esta consumiendo el contenido'),
- (3,'Terminado','Se ha consumido el contenido');
-INSERT INTO "adquisicion" ("id_adquisicion","nombre_adquisicion") VALUES (1,'No Comprado'),
- (2,'Comprado'),
- (3,'Prestado');
+ (2,'En Progreso','Se esta consumiendo el contenido');
+INSERT INTO "adquisicion" ("id_adquisicion","nombre_adquisicion") VALUES (0,'No Comprado'),
+ (1,'Comprado'),
+ (2,'Prestado');
 COMMIT;

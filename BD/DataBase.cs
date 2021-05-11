@@ -73,7 +73,6 @@ namespace BD
             }
             else
             {
-
                 Console.WriteLine("No existe para eliminar");
             }
         }
@@ -87,7 +86,8 @@ namespace BD
         {
             SQLiteCommand command = new SQLiteCommand(sentences, this.myConnection);
             OpenConnection();
-
+            Console.WriteLine(">> DB: LoadStatement > " + (sentences.Length > 101 ? sentences.Substring(0, 100) : sentences) + ".......");
+            
             try
             {
                 int cambios = command.ExecuteNonQuery(System.Data.CommandBehavior.Default);
@@ -95,7 +95,7 @@ namespace BD
             }
             catch(Exception ex)
             {
-                Console.WriteLine("LoadStatement no ha funcionado\nError: " + ex.Message);
+                Console.WriteLine(">> EXCEPTION: LoadStatement no ha funcionado\nMessage: " + ex.Message);
 
             }
 
@@ -105,11 +105,29 @@ namespace BD
         /// <summary>
         /// Retorna los datos de un Select
         /// </summary>
+        /// <remarks>No funciona actualmente</remarks>
         /// <param name="sentence"></param>
         /// <returns></returns>
-        public SQLiteVirtualTable Select(string sentence)
+        public SQLiteDataReader Select(string sentence)
         {
-            return null;
+            SQLiteCommand command = new SQLiteCommand(sentence, this.myConnection);
+            SQLiteDataReader result;
+            OpenConnection();
+            Console.WriteLine(">> DB: Select > " + (sentence.Length > 101?sentence.Substring(0, 100):sentence) + ".......");
+
+            try
+            {
+                result = command.ExecuteReader();
+                Console.WriteLine("Select Correcto");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(">> EXCEPTION: Select no ha funcionado\nMessage: " + ex.Message);
+                result = null;
+            }
+
+            CloseConnection();
+            return result;
         }
 
         /// <summary>
@@ -119,7 +137,24 @@ namespace BD
         /// <returns></returns>
         public bool NonQuery(string sentence)
         {
-            return false;
+            int cambios = 0;
+            SQLiteCommand command = new SQLiteCommand(sentence, this.myConnection);
+            OpenConnection();
+            Console.WriteLine(">> DB: NonQuery: " + sentence);
+            try
+            {
+                cambios = command.ExecuteNonQuery(System.Data.CommandBehavior.Default);
+                Console.WriteLine("NonQuery Correcto");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(">> EXCEPTION: NonQuery no ha funcionado\nMessage: " + ex.Message);
+                cambios = 0;
+            }
+
+            CloseConnection();
+
+            return cambios > 0; //Devuelve true si ha funcionado correctamente
         }
     }
 }

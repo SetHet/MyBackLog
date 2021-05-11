@@ -13,34 +13,33 @@ namespace BD
 
         public static void CrearModelo(BD.DataBase db)
         {
-            Import(db, path_import);
+            Import(db);
         }
 
-        public static void CreateTables()
+        /// <summary>
+        /// Carga un archivo de creacion .sql en la base de datos sqlite3
+        /// </summary>
+        /// <param name="db"></param>
+        public static void Import(BD.DataBase db)
         {
-
-        }
-
-        public static void StartLogs()
-        {
-
-        }
-
-        public static void Import(BD.DataBase db, string path_import)
-        {
-            if (File.Exists(path_import)) Console.WriteLine("Exported found");
-            else
+            if (!File.Exists(path_import))
             {
-                Console.WriteLine("Exported not found");
+                Console.WriteLine(">> ERROR: Exported SQL not found");
                 return;
             }
-            
-            //Leer archivo creador (exportacion)
-            string import = File.ReadAllText(path_import);
 
-            //Load in db import file
-            db.LoadStatement(import);
+            try
+            {
+                //Leer archivo creador (exportacion)
+                string import = File.ReadAllText(path_import);
 
+                //Load in db import file
+                db.LoadStatement(import);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(">> EXCEPTION: Error en la lectura de datos\nInfo: " + ex.Message);
+            }
         }
     }
 }
