@@ -11,11 +11,15 @@ namespace ConsolaPruebas
         static void Main(string[] args)
         {
             Console.WriteLine("Start");
+            
+            BD.DataBase.DeleteDataBase("myBackLogDataBase.sqlite3");
+            Console.ReadLine();
             BD.DataBase db = new BD.DataBase();
 
-            
 
-            db.DeleteDataBase();
+            db.LoadStatement("Create table biz (column1 text primary key);\nCreate table biz2 (column1 text primary key);");
+
+
             Console.Read();
         }
     }

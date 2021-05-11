@@ -28,7 +28,7 @@ namespace BD
 
         public static void Import(BD.DataBase db, string path_import)
         {
-            string import = File.ReadAllText(path_import);
+            //string import = File.ReadAllText(path_import);
 
             //Load in db import file
         }

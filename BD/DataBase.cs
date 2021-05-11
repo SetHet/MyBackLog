@@ -11,7 +11,7 @@ namespace BD
     public class DataBase
     {
         public string nameDB = "myBackLogDataBase.sqlite3";
-        public string connectionString = "Data Source=database.sqlite3";
+        public string connectionString = "Data Source=myBackLogDataBase.sqlite3";
 
         public SQLiteConnection myConnection;
 
@@ -56,6 +56,26 @@ namespace BD
         public void DeleteDataBase()
         {
             File.Delete("./" + nameDB);
+            Console.WriteLine("Delete DataBase");
+        }
+
+        public static void DeleteDataBase(string name)
+        {
+
+            Console.WriteLine("Eliminando: " + "./" + name);
+            if (File.Exists("./" + name))
+            {
+                File.Delete("./" + name);
+                if (!File.Exists("./" + name))
+                    Console.WriteLine("Delete DataBase" + name);
+                else
+                    Console.WriteLine("No se pudo eliminar");
+            }
+            else
+            {
+
+                Console.WriteLine("No existe para eliminar");
+            }
         }
 
         /// <summary>
@@ -65,7 +85,21 @@ namespace BD
         /// <param name="sentences"></param>
         public void LoadStatement(string sentences)
         {
-            
+            SQLiteCommand command = new SQLiteCommand(sentences, this.myConnection);
+            OpenConnection();
+
+            try
+            {
+                int cambios = command.ExecuteNonQuery(System.Data.CommandBehavior.Default);
+                Console.WriteLine("LoadStatement Correcto");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("LoadStatement no ha funcionado\nError: " + ex.Message);
+
+            }
+
+            CloseConnection();
         }
 
         /// <summary>
