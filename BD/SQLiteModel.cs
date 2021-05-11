@@ -9,7 +9,7 @@ namespace BD
 {
     public static class SQLiteModel
     {
-        public static string path_import = "";
+        public static string path_import = "./exportedDB.sql";
 
         public static void CrearModelo(BD.DataBase db)
         {
@@ -28,9 +28,19 @@ namespace BD
 
         public static void Import(BD.DataBase db, string path_import)
         {
-            //string import = File.ReadAllText(path_import);
+            if (File.Exists(path_import)) Console.WriteLine("Exported found");
+            else
+            {
+                Console.WriteLine("Exported not found");
+                return;
+            }
+            
+            //Leer archivo creador (exportacion)
+            string import = File.ReadAllText(path_import);
 
             //Load in db import file
+            db.LoadStatement(import);
+
         }
     }
 }

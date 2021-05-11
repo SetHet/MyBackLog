@@ -17,7 +17,7 @@ namespace ConsolaPruebas
             BD.DataBase db = new BD.DataBase();
 
 
-            db.LoadStatement("Create table biz (column1 text primary key);\nCreate table biz2 (column1 text primary key);");
+           
 
 
             Console.Read();
