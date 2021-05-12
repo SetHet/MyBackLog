@@ -108,26 +108,44 @@ namespace BD
         /// <remarks>No funciona actualmente</remarks>
         /// <param name="sentence"></param>
         /// <returns></returns>
-        public SQLiteDataReader Select(string sentence)
+        public List<object[]> Select(string sentence)
         {
             SQLiteCommand command = new SQLiteCommand(sentence, this.myConnection);
             SQLiteDataReader result;
             OpenConnection();
             Console.WriteLine(">> DB: Select > " + (sentence.Length > 101?sentence.Substring(0, 100):sentence) + ".......");
 
+            List<object[]> entrega = null;
+            object[] row = null;
+
             try
             {
                 result = command.ExecuteReader();
+                int columns = result.FieldCount;
+                Console.WriteLine("Columns: " + columns);
+
+                entrega = new List<object[]>();
+
+                while (result.Read())
+                {
+                    row = new object[columns];
+                    for (int pos_y = 0; pos_y < columns; pos_y++)
+                    {
+                        row[pos_y] = result[pos_y];
+                    }
+                    entrega.Add(row);
+                }
+
                 Console.WriteLine("Select Correcto");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(">> EXCEPTION: Select no ha funcionado\nMessage: " + ex.Message);
-                result = null;
+                entrega = null;
             }
 
             CloseConnection();
-            return result;
+            return entrega;
         }
 
         /// <summary>
