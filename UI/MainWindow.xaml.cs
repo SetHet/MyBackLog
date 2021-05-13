@@ -24,5 +24,11 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Gestionar_plataforma gestionar = new Gestionar_plataforma();
+            gestionar.Show();
+        }
     }
 }
