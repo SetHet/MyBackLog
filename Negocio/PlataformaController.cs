@@ -13,7 +13,7 @@ namespace Negocio
         {
             BD.DataBase db = new DataBase();
             bool insert;
-            string nonQuerry = "Insert into plataforma (titulo, descripcion) values ('" + plataforma.Titulo + "','" + plataforma.Descripcion + "')";
+            string nonQuerry = "Insert into plataforma values (1, 'Steam', 'PC Master Race')";
             insert = db.NonQuery(nonQuerry);
             return insert;
         }       

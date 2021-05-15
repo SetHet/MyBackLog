@@ -30,5 +30,22 @@ namespace UI
             gestionar.Show();
             this.Close();
         }
+
+        private void aceptar_add_Click(object sender, RoutedEventArgs e)
+        {
+            Negocio.Plataforma plataforma = new Negocio.Plataforma
+            {
+                Titulo = titulo_plataforma_add.Text,
+                Descripcion = descripcion_plataforma_add.Text
+            };
+            if (Negocio.PlataformaController.insertarPlataforma(plataforma))
+            {
+                MessageBox.Show("Insertado con éxtio");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+        }
     }
 }

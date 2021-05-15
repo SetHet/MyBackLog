@@ -57,22 +57,5 @@ namespace UI
             delete.Show();
             this.Close();
         }
-
-        private void agregar_plataforma_bd_Click(object sender, RoutedEventArgs e)
-        {
-            Negocio.Plataforma plataforma = new Negocio.Plataforma
-            {
-                Titulo = txt_titulo_add.Text,
-                Descripcion = txt_descripcion_add.Text
-            };
-            if (Negocio.PlataformaController.insertarPlataforma(plataforma)){
-                MessageBox.Show("Insertado con éxtio");
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-
-        }
     }
 }
