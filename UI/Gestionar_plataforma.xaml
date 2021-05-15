@@ -102,7 +102,7 @@
             <Label Content="Agregar plataforma" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
             <Label Content="Titulo plataforma" HorizontalAlignment="Left" Margin="29,139,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
             <Label Content="Descripcion" HorizontalAlignment="Left" Margin="29,244,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
-            <Button x:Name="agregar_plataforma_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666"/>
+            <Button x:Name="agregar_plataforma_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="agregar_plataforma_bd_Click"/>
             <Button x:Name="Cancelar_plataforma_add" Content="Cancelar" HorizontalAlignment="Left" Margin="366,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="Cancelar_plataforma_add_Click"/>
             <TextBox x:Name="txt_titulo_add" HorizontalAlignment="Left" Height="23" Margin="29,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
             <TextBox x:Name="txt_descripcion_add" HorizontalAlignment="Left" Height="78" Margin="29,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
