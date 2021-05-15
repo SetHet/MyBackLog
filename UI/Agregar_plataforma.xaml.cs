@@ -33,7 +33,7 @@ namespace UI
 
         private void aceptar_add_Click(object sender, RoutedEventArgs e)
         {
-            Negocio.Plataforma plataforma = new Negocio.Plataforma
+            Datos.Plataforma plataforma = new Datos.Plataforma
             {
                 Titulo = titulo_plataforma_add.Text,
                 Descripcion = descripcion_plataforma_add.Text

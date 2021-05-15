@@ -97,9 +97,9 @@
         <Label Content="Gestionar plataforma" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <DataGrid x:Name="grid_datos" HorizontalAlignment="Left" Height="333" Margin="225,65,0,0" VerticalAlignment="Top" Width="355">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id plataforma"/>
-                <DataGridTextColumn Header="Titulo"/>
-                <DataGridTextColumn Header="Descripcion"/>
+                <DataGridTextColumn Header="Id plataforma" Binding="{Binding Path=Id_plataforma}"/>
+                <DataGridTextColumn Header="Titulo" Binding="{Binding Path=Titulo}"/>
+                <DataGridTextColumn Header="Descripcion" Binding="{Binding Path=Descripcion}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="eliminar_plataforma" Content="Eliminar" HorizontalAlignment="Left" Margin="697,118,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="eliminar_plataforma_Click"/>

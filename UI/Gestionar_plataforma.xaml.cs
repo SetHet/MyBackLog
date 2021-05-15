@@ -21,7 +21,22 @@ namespace UI
     {
         public new_gestionar_plataforma()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            Listar();
+        }
+
+        private void Listar()
+        {
+            List<object[]> ListPlataforma = Negocio.PlataformaController.verPlataforma();
+            if (ListPlataforma != null) 
+            {
+                foreach (var item in ListPlataforma)
+                {
+                    Console.WriteLine(item);
+                    var datos = new Datos.Plataforma { Id_plataforma = int.Parse(item.GetValue(0).ToString()), Titulo = item.GetValue(1).ToString(), Descripcion = item.GetValue(2).ToString() };
+                    grid_datos.Items.Add(datos);
+                }
+            }
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
