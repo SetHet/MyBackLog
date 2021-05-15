@@ -15,14 +15,15 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Lógica de interacción para Gestionar_plataforma.xaml
+    /// Lógica de interacción para new_gestionar_plataforma.xaml
     /// </summary>
-    public partial class Gestionar_plataforma : Window
+    public partial class new_gestionar_plataforma : Window
     {
-        public Gestionar_plataforma()
+        public new_gestionar_plataforma()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
+
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonOpenMenu.Visibility = Visibility.Visible;
@@ -35,85 +36,26 @@ namespace UI
             ButtonCloseMenu.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void addplataforma_Click(object sender, RoutedEventArgs e)
         {
-            grid_agregar.Visibility = Visibility.Visible;
-            grid_principal.Visibility = Visibility.Collapsed;
-            edit_grid.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Collapsed;
-            delete_grid.Visibility = Visibility.Collapsed;
+            Agregar_plataforma add = new Agregar_plataforma();
+            add.Show();
+            this.Close();
         }
 
-        private void Cancelar_plataforma_add_Click(object sender, RoutedEventArgs e)
+        private void editar_plataforma_Click(object sender, RoutedEventArgs e)
         {
-            grid_agregar.Visibility = Visibility.Collapsed;
-            grid_principal.Visibility = Visibility.Visible;
-            edit_grid.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Collapsed;
-            delete_grid.Visibility = Visibility.Collapsed;
+            Editar_plataforma edit = new Editar_plataforma();
+            edit.Show();
+            this.Close();
 
-            txt_titulo_add.Clear();
-            txt_descripcion_add.Clear();
         }
 
-        private void cancelar_editar_Click(object sender, RoutedEventArgs e)
+        private void eliminar_plataforma_Click(object sender, RoutedEventArgs e)
         {
-            grid_agregar.Visibility = Visibility.Collapsed;
-            grid_principal.Visibility = Visibility.Visible;
-            edit_grid.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Collapsed;
-            delete_grid.Visibility = Visibility.Collapsed;
-
-            txt_codigo_edit.Clear();
-            txt_titulo_edit.Clear();
-            txt_descripcion_edit.Clear();
-        }
-
-        private void editplataforma_Click(object sender, RoutedEventArgs e)
-        {
-            edit_grid.Visibility = Visibility.Visible;
-            grid_agregar.Visibility = Visibility.Collapsed;
-            grid_principal.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Collapsed;
-            delete_grid.Visibility = Visibility.Collapsed;
-        }
-
-        private void salirver_Click(object sender, RoutedEventArgs e)
-        {
-            grid_principal.Visibility = Visibility.Visible;
-            grid_agregar.Visibility = Visibility.Collapsed;
-            edit_grid.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Collapsed;
-            delete_grid.Visibility = Visibility.Collapsed;
-        }
-
-        private void verplataforma_Click(object sender, RoutedEventArgs e)
-        {
-            grid_principal.Visibility = Visibility.Collapsed;
-            grid_agregar.Visibility = Visibility.Collapsed;
-            edit_grid.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Visible;
-            delete_grid.Visibility = Visibility.Collapsed;
-        }
-
-        private void cancelar_delete_Click(object sender, RoutedEventArgs e)
-        {
-            grid_principal.Visibility = Visibility.Visible;
-            grid_agregar.Visibility = Visibility.Collapsed;
-            edit_grid.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Collapsed;
-            delete_grid.Visibility = Visibility.Collapsed;
-
-            txt_codigo_delete.Clear();
-        }
-
-        private void deleteplataforma_Click(object sender, RoutedEventArgs e)
-        {
-            grid_principal.Visibility = Visibility.Collapsed;
-            grid_agregar.Visibility = Visibility.Collapsed;
-            edit_grid.Visibility = Visibility.Collapsed;
-            grid_ver.Visibility = Visibility.Collapsed;
-            delete_grid.Visibility = Visibility.Visible;
+            Eliminar_plataforma delete = new Eliminar_plataforma();
+            delete.Show();
+            this.Close();
         }
     }
 }
