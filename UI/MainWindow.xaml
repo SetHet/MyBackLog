@@ -7,7 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Gestionar contenido" HorizontalAlignment="Left" Margin="379,94,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Gestionar contenido" HorizontalAlignment="Left" Margin="717,0,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Grid x:Name="Navegacion">
+
+        </Grid>
+        <Grid x:Name="Ver_Contenido" Visibility="Collapsed">
+            <DataGrid x:Name="VerContenido_Tabla" HorizontalAlignment="Left" Height="316" Margin="204,53,0,0" VerticalAlignment="Top" Width="357" Background="Red"/>
+
+        </Grid>
+        <Grid x:Name="Ver_Plataformas">
+
+        </Grid>
+        <Grid x:Name="Temporal">
+            <Grid x:Name="Crear_Contenido">
+
+            </Grid>
+            <Grid x:Name="Modificar_Contenido">
+
+            </Grid>
+        </Grid>
 
     </Grid>
 </Window>

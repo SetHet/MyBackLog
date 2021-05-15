@@ -10,25 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace UI
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para Agregar_plataforma.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Agregar_plataforma : Window
     {
-        public MainWindow()
+        public Agregar_plataforma()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Cancelar_add_Click(object sender, RoutedEventArgs e)
         {
             new_gestionar_plataforma gestionar = new new_gestionar_plataforma();
             gestionar.Show();
+            this.Close();
         }
     }
 }

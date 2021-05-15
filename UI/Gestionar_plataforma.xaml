@@ -1,4 +1,4 @@
-﻿<Window x:Class="UI.Gestionar_plataforma"
+﻿<Window x:Class="UI.new_gestionar_plataforma"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog Gestionar plataforma" Height="517" Width="800" WindowStartupLocation="CenterScreen" Background="#FF4C1130">
+        Title="MyBackLog" Height="450" Width="806" WindowStartupLocation="CenterScreen">
+
     <Window.Resources>
         <Storyboard x:Key="AbrirMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -30,7 +31,8 @@
             <BeginStoryboard Storyboard="{StaticResource CerrarMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid>
+
+    <Grid Background="#FF4C1130">
         <Grid x:Name="GridMenu" Width="50" HorizontalAlignment="Left" Background="#FF666666">
             <StackPanel>
                 <Grid Height="58" HorizontalAlignment="Left">
@@ -91,54 +93,16 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Grid Visibility="Visible" x:Name="grid_principal" HorizontalAlignment="Left" Height="486" Margin="50,0,0,0" VerticalAlignment="Top" Width="742">
-            <Label Content="Gestionar plataforma" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-            <Button x:Name="verplataforma" Content="Ver plataformas" HorizontalAlignment="Left" Margin="164,253,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="verplataforma_Click"/>
-            <Button x:Name="addplataforma" Content="Agregar plataforma" HorizontalAlignment="Left" Margin="164,150,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="Button_Click"/>
-            <Button x:Name="editplataforma" Content="Editar plataforma" HorizontalAlignment="Left" Margin="444,150,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="editplataforma_Click"/>
-            <Button x:Name="deleteplataforma" Content="Eliminar plataforma" HorizontalAlignment="Left" Margin="444,253,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="deleteplataforma_Click"/>
-        </Grid>
-        <Grid x:Name="grid_agregar" HorizontalAlignment="Left" Height="486" Margin="209,0,0,0" VerticalAlignment="Top" Width="583" Visibility="Collapsed">
-            <Label Content="Agregar plataforma" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
-            <Label Content="Titulo plataforma" HorizontalAlignment="Left" Margin="29,139,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
-            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="29,244,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
-            <Button x:Name="agregar_plataforma_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="agregar_plataforma_bd_Click"/>
-            <Button x:Name="Cancelar_plataforma_add" Content="Cancelar" HorizontalAlignment="Left" Margin="366,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="Cancelar_plataforma_add_Click"/>
-            <TextBox x:Name="txt_titulo_add" HorizontalAlignment="Left" Height="23" Margin="29,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
-            <TextBox x:Name="txt_descripcion_add" HorizontalAlignment="Left" Height="78" Margin="29,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
-
-        </Grid>
-        <Grid Visibility="Collapsed" x:Name="edit_grid" HorizontalAlignment="Left" Height="486" Margin="247,0,0,0" VerticalAlignment="Top" Width="545">
-            <Label Content="Editar plataforma" HorizontalAlignment="Left" Margin="151,0,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="22"/>
-            <Label Content="Titulo" HorizontalAlignment="Left" Margin="53,172,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
-            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="53,254,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="20"/>
-            <TextBox x:Name="txt_titulo_edit" HorizontalAlignment="Left" Height="23" Margin="53,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" Background="White"/>
-            <TextBox x:Name="txt_descripcion_edit" HorizontalAlignment="Left" Height="76" Margin="53,309,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" Background="White"/>
-            <Button x:Name="editar_plataforma" Content="Aceptar" HorizontalAlignment="Left" Margin="151,432,0,0" VerticalAlignment="Top" Width="108" Background="#FF666666"/>
-            <Button x:Name="cancelar_editar" Content="Cancelar" HorizontalAlignment="Left" Margin="315,432,0,0" VerticalAlignment="Top" Width="108" Background="#FF666666" Click="cancelar_editar_Click"/>
-            <Label Content="Ingresar codigo plataforma" HorizontalAlignment="Left" Margin="53,92,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
-            <TextBox x:Name="txt_codigo_edit" HorizontalAlignment="Left" Height="23" Margin="53,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" Background="White"/>
-        </Grid>
-        <Grid Visibility="Collapsed" x:Name="grid_ver" HorizontalAlignment="Left" Height="486" Margin="233,0,0,0" VerticalAlignment="Top" Width="559">
-            <Label Content="Ver plataformas agregadas" HorizontalAlignment="Left" Margin="141,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
-            <Label Content="Plataformas" HorizontalAlignment="Left" Margin="21,112,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
-            <DataGrid HorizontalAlignment="Left" Height="220" Margin="42,190,0,0" VerticalAlignment="Top" Width="489" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id plataforma"/>
-                    <DataGridTextColumn Header="Titulo"/>
-                    <DataGridTextColumn Header="Descripcion"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button x:Name="salirver" Content="Cancelar" HorizontalAlignment="Left" Margin="252,440,0,0" VerticalAlignment="Top" Width="101" Background="#FF666666" Click="salirver_Click"/>
-        </Grid>
-        <Grid x:Name="delete_grid" Visibility="Collapsed" HorizontalAlignment="Left" Height="486" Margin="264,0,0,0" VerticalAlignment="Top" Width="528">
-            <Label Content="Eliminar plataforma" HorizontalAlignment="Left" Margin="169,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
-            <Label Content="Ingresar codigo plataforma" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="20"/>
-            <TextBox x:Name="txt_codigo_delete" HorizontalAlignment="Left" Height="23" Margin="10,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" Foreground="Black" BorderBrush="#89FFFFFF" CaretBrush="White" Background="White"/>
-            <Button Content="Eliminar" x:Name="Eliminar_plataforma_bd" HorizontalAlignment="Left" Margin="125,355,0,0" VerticalAlignment="Top" Width="106" Background="#FF666666"/>
-            <Button x:Name="cancelar_delete" Content="Cancelar" HorizontalAlignment="Left" Margin="289,355,0,0" VerticalAlignment="Top" Width="106" Click="cancelar_delete_Click" Background="#FF666666"/>
-
-        </Grid>
-
+        <Button x:Name="addplataforma" Content="Agregar plataforma" HorizontalAlignment="Left" Margin="607,65,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
+        <Label Content="Gestionar plataforma" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+        <DataGrid x:Name="grid_datos" HorizontalAlignment="Left" Height="333" Margin="225,65,0,0" VerticalAlignment="Top" Width="355">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id plataforma"/>
+                <DataGridTextColumn Header="Titulo"/>
+                <DataGridTextColumn Header="Descripcion"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="eliminar_plataforma" Content="Eliminar" HorizontalAlignment="Left" Margin="697,118,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="eliminar_plataforma_Click"/>
+        <Button x:Name="editar_plataforma" Content="Editar" HorizontalAlignment="Left" Margin="607,118,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="editar_plataforma_Click"/>
     </Grid>
 </Window>

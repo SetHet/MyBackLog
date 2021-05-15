@@ -80,7 +80,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Gestionar_plataforma.xaml">
+    <Page Include="Agregar_plataforma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editar_plataforma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Eliminar_plataforma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,19 +96,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Agregar_plataforma.xaml.cs">
+      <DependentUpon>Agregar_plataforma.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Gestionar_plataforma.xaml.cs">
-      <DependentUpon>Gestionar_plataforma.xaml</DependentUpon>
+    <Compile Include="Editar_plataforma.xaml.cs">
+      <DependentUpon>Editar_plataforma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_plataforma.xaml.cs">
+      <DependentUpon>Eliminar_plataforma.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Gestionar_Plataforma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gestionar_Plataforma.xaml.cs">
+      <DependentUpon>Gestionar_Plataforma.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
