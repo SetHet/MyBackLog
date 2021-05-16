@@ -1,4 +1,4 @@
-﻿<Window x:Class="UI.new_gestionar_plataforma"
+﻿<Window x:Class="UI.Gestionar_plataforma"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,8 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="450" Width="806" WindowStartupLocation="CenterScreen">
-
+        Title="MyBackLog Gestionar plataforma" Height="517" Width="800" WindowStartupLocation="CenterScreen" Background="#FF4C1130">
     <Window.Resources>
         <Storyboard x:Key="AbrirMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -31,15 +30,14 @@
             <BeginStoryboard Storyboard="{StaticResource CerrarMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-
-    <Grid Background="#FF4C1130">
+    <Grid>
         <Grid x:Name="GridMenu" Width="50" HorizontalAlignment="Left" Background="#FF666666">
             <StackPanel>
                 <Grid Height="58" HorizontalAlignment="Left">
                     <Button x:Name="ButtonCloseMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25" />
                     </Button>
-                    <Button x:Name="ButtonOpenMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonOpenMenu_Click">
+                    <Button x:Name="ButtonOpenMenu" Height="45" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonOpenMenu_Click">
                         <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25"/>
                     </Button>
                 </Grid>
@@ -57,7 +55,7 @@
                                 <TextBlock Text="Sugerencias" Foreground="White" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="58">
+                        <ListViewItem Height="58" Selected="ListViewItem_Selected">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Clock" Foreground="#FF932C2C" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
                                 <TextBlock Text="Pendiente" Foreground="White" VerticalAlignment="Center"/>
@@ -66,25 +64,25 @@
                     </ListView>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Selected="ListViewItem_Selected_1">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Movie" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
-                            <TextBlock Text="Peliculas" Foreground="White" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Foreground="Black" Kind="Movie" Width="25" Height="35" VerticalAlignment="Center" Margin="10"/>
+                            <TextBlock Text="Peliculas" Foreground="White" Width="50" Height="25" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Selected="ListViewItem_Selected_2">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Play" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
                             <TextBlock Text="Series" Foreground="White" Width="37" Height="25" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Selected="ListViewItem_Selected_3">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="GamepadClassic" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
                             <TextBlock Text="Juegos" Foreground="White" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Selected="ListViewItem_Selected_4">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="BookOpenPageVariant" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
                             <TextBlock Text="Libros" Foreground="White" VerticalAlignment="Center"/>
@@ -93,16 +91,168 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Button x:Name="addplataforma" Content="Agregar plataforma" HorizontalAlignment="Left" Margin="607,65,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
-        <Label Content="Gestionar plataforma" HorizontalAlignment="Left" Margin="299,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-        <DataGrid x:Name="grid_datos" HorizontalAlignment="Left" Height="333" Margin="225,65,0,0" VerticalAlignment="Top" Width="355">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id plataforma" Binding="{Binding Path=Id_plataforma}"/>
-                <DataGridTextColumn Header="Titulo" Binding="{Binding Path=Titulo}"/>
-                <DataGridTextColumn Header="Descripcion" Binding="{Binding Path=Descripcion}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="eliminar_plataforma" Content="Eliminar" HorizontalAlignment="Left" Margin="697,118,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="eliminar_plataforma_Click"/>
-        <Button x:Name="editar_plataforma" Content="Editar" HorizontalAlignment="Left" Margin="607,118,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="editar_plataforma_Click"/>
+        <Grid Visibility="Visible" x:Name="grid_principal" HorizontalAlignment="Left" Height="486" Margin="50,0,0,0" VerticalAlignment="Top" Width="742">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="701*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Gestionar plataforma" HorizontalAlignment="Left" Margin="216.479,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF" Grid.Column="1"/>
+            <Button x:Name="verplataforma" Content="Ver plataformas" HorizontalAlignment="Left" Margin="123.479,253,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="verplataforma_Click" Grid.Column="1"/>
+            <Button x:Name="addplataforma" Content="Agregar plataforma" HorizontalAlignment="Left" Margin="123.479,150,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="Button_Click" Grid.Column="1"/>
+            <Button x:Name="editplataforma" Content="Editar plataforma" HorizontalAlignment="Left" Margin="403.479,150,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="editplataforma_Click" Grid.Column="1"/>
+            <Button x:Name="deleteplataforma" Content="Eliminar plataforma" HorizontalAlignment="Left" Margin="403.479,253,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="deleteplataforma_Click" Grid.Column="1"/>
+        </Grid>
+        <Grid x:Name="grid_agregar" HorizontalAlignment="Left" Height="486" Margin="209,0,0,0" VerticalAlignment="Top" Width="583" Visibility="Collapsed">
+            <Label Content="Agregar plataforma" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Titulo plataforma" HorizontalAlignment="Left" Margin="29,139,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="29,244,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
+            <Button x:Name="agregar_plataforma_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666"/>
+            <Button x:Name="Cancelar_plataforma_add" Content="Cancelar" HorizontalAlignment="Left" Margin="366,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="Cancelar_plataforma_add_Click"/>
+            <TextBox x:Name="txt_titulo_add" HorizontalAlignment="Left" Height="23" Margin="29,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_descripcion_add" HorizontalAlignment="Left" Height="78" Margin="29,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+
+        </Grid>
+        <Grid Visibility="Collapsed" x:Name="edit_grid" HorizontalAlignment="Left" Height="486" Margin="247,0,0,0" VerticalAlignment="Top" Width="545">
+            <Label Content="Editar plataforma" HorizontalAlignment="Left" Margin="151,0,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Titulo" HorizontalAlignment="Left" Margin="53,172,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="53,254,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="20"/>
+            <TextBox x:Name="txt_titulo_edit" HorizontalAlignment="Left" Height="23" Margin="53,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" Background="White"/>
+            <TextBox x:Name="txt_descripcion_edit" HorizontalAlignment="Left" Height="76" Margin="53,309,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" Background="White"/>
+            <Button x:Name="editar_plataforma" Content="Aceptar" HorizontalAlignment="Left" Margin="151,432,0,0" VerticalAlignment="Top" Width="108" Background="#FF666666"/>
+            <Button x:Name="cancelar_editar" Content="Cancelar" HorizontalAlignment="Left" Margin="315,432,0,0" VerticalAlignment="Top" Width="108" Background="#FF666666" Click="cancelar_editar_Click"/>
+            <Label Content="Ingresar codigo plataforma" HorizontalAlignment="Left" Margin="53,92,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
+            <TextBox x:Name="txt_codigo_edit" HorizontalAlignment="Left" Height="23" Margin="53,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" Background="White"/>
+        </Grid>
+        <Grid Visibility="Collapsed" x:Name="grid_ver" HorizontalAlignment="Left" Height="486" Margin="233,0,0,0" VerticalAlignment="Top" Width="559">
+            <Label Content="Ver plataformas agregadas" HorizontalAlignment="Left" Margin="141,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Plataformas" HorizontalAlignment="Left" Margin="21,112,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
+            <DataGrid HorizontalAlignment="Left" Height="220" Margin="42,190,0,0" VerticalAlignment="Top" Width="489" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id plataforma"/>
+                    <DataGridTextColumn Header="Titulo"/>
+                    <DataGridTextColumn Header="Descripcion"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="salirver" Content="Cancelar" HorizontalAlignment="Left" Margin="252,440,0,0" VerticalAlignment="Top" Width="101" Background="#FF666666" Click="salirver_Click"/>
+        </Grid>
+        <Grid x:Name="delete_grid" Visibility="Collapsed" HorizontalAlignment="Left" Height="486" Margin="264,0,0,0" VerticalAlignment="Top" Width="528">
+            <Label Content="Eliminar plataforma" HorizontalAlignment="Left" Margin="169,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Ingresar codigo plataforma" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="20"/>
+            <TextBox x:Name="txt_codigo_delete" HorizontalAlignment="Left" Height="23" Margin="10,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" Foreground="Black" BorderBrush="#89FFFFFF" CaretBrush="White" Background="White"/>
+            <Button Content="Eliminar" x:Name="Eliminar_plataforma_bd" HorizontalAlignment="Left" Margin="125,355,0,0" VerticalAlignment="Top" Width="106" Background="#FF666666"/>
+            <Button x:Name="cancelar_delete" Content="Cancelar" HorizontalAlignment="Left" Margin="289,355,0,0" VerticalAlignment="Top" Width="106" Click="cancelar_delete_Click" Background="#FF666666"/>
+
+        </Grid>
+        <Grid x:Name ="grid_peliculas" HorizontalAlignment="Left" Height="486" Margin="209,0,0,0" VerticalAlignment="Top" Width="583" Visibility="Collapsed">
+            <Label Content="Titulo" HorizontalAlignment="Left" Margin="29,50,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="29,120,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
+            <Label Content="Calificacion" HorizontalAlignment="Left" Margin="29,250,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Horas a invertir" HorizontalAlignment="Left" Margin="29,320,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Button x:Name="agregar_pelicula_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666"/>
+            <Button x:Name="Cancelar_pelicula_add" Content="Cancelar" HorizontalAlignment="Left" Margin="366,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="cancelar_pelicula_add_click"/>
+            <TextBox x:Name="txt_titulopel_add" HorizontalAlignment="Left" Height="23" Margin="29,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_descripcionpel_add" HorizontalAlignment="Left" Height="78" Margin="29,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_calificacion_add" HorizontalAlignment="Left" Height="23" Margin="29,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_horasinversion_add" HorizontalAlignment="Left" Height="23" Margin="29,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+
+        </Grid>
+
+        <Grid x:Name ="grid_juegos" HorizontalAlignment="Left" Height="486" Margin="209,0,0,0" VerticalAlignment="Top" Width="583" Visibility="Collapsed">
+            <Label Content="Titulo" HorizontalAlignment="Left" Margin="29,50,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="29,120,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
+            <Label Content="Calificacion" HorizontalAlignment="Left" Margin="29,250,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Horas a invertir" HorizontalAlignment="Left" Margin="29,320,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Button x:Name="agregar_juego_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666"/>
+            <Button x:Name="Cancelar_juego_add" Content="Cancelar" HorizontalAlignment="Left" Margin="366,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="cancelar_game_add_click"/>
+            <TextBox x:Name="txt_titulogame_add" HorizontalAlignment="Left" Height="23" Margin="29,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_descripciongame_add" HorizontalAlignment="Left" Height="78" Margin="29,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_calificacion_game" HorizontalAlignment="Left" Height="23" Margin="29,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_horasinversion_game" HorizontalAlignment="Left" Height="23" Margin="29,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+
+        </Grid>
+
+        <Grid x:Name ="grid_series" HorizontalAlignment="Left" Height="486" Margin="209,0,0,0" VerticalAlignment="Top" Width="583" Visibility="Collapsed">
+            <Label Content="Titulo" HorizontalAlignment="Left" Margin="29,50,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="29,120,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
+            <Label Content="Calificacion" HorizontalAlignment="Left" Margin="29,250,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Horas a invertir" HorizontalAlignment="Left" Margin="29,320,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Button x:Name="agregar_serie_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666"/>
+            <Button x:Name="Cancelar_serie_add" Content="Cancelar" HorizontalAlignment="Left" Margin="366,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="cancelar_serie_add_click"/>
+            <TextBox x:Name="txt_tituloserie_add" HorizontalAlignment="Left" Height="23" Margin="29,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_descripcionserie_add" HorizontalAlignment="Left" Height="78" Margin="29,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_calificacionserie_add" HorizontalAlignment="Left" Height="23" Margin="29,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_horasinversionserie_add" HorizontalAlignment="Left" Height="23" Margin="29,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+
+        </Grid>
+
+        <Grid x:Name ="grid_libros" HorizontalAlignment="Left" Height="486" Margin="209,0,0,0" VerticalAlignment="Top" Width="583" Visibility="Collapsed">
+            <Label Content="Titulo" HorizontalAlignment="Left" Margin="29,50,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="29,120,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#DDFFFFFF"/>
+            <Label Content="Calificacion" HorizontalAlignment="Left" Margin="29,250,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label Content="Horas a invertir" HorizontalAlignment="Left" Margin="29,320,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Button x:Name="agregar_libro_bd" Content="Agregar" HorizontalAlignment="Left" Margin="140,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666"/>
+            <Button x:Name="Cancelar_libro_add" Content="Cancelar" HorizontalAlignment="Left" Margin="366,412,0,0" VerticalAlignment="Top" Width="114" Background="#FF666666" Click="cancelar_libro_add_click"/>
+            <TextBox x:Name="txt_titulolibro_add" HorizontalAlignment="Left" Height="23" Margin="29,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_descripcionlibro_add" HorizontalAlignment="Left" Height="78" Margin="29,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_calificacionlibro_add" HorizontalAlignment="Left" Height="23" Margin="29,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+            <TextBox x:Name="txt_horasinversionlibro_add" HorizontalAlignment="Left" Height="23" Margin="29,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Background="White" />
+
+        </Grid>
+
+        <Grid x:Name="grid_btnplus" Visibility="Collapsed">
+            <DataGrid HorizontalAlignment="Left" Height="220" Margin="120.480,240,0,0" VerticalAlignment="Top" Width="489" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id pelicula"/>
+                    <DataGridTextColumn Header="Minuto"/>
+                    <DataGridTextColumn Header="Duracion minuto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btniconadd" Height="44" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Margin="730,0,0,0" Click="btn_plus_add" >
+                <materialDesign:PackIcon Foreground="DarkGreen" Kind="Plus" Width="25" Height="25"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="grid_btnplus_serie" Visibility="Collapsed">
+            <DataGrid HorizontalAlignment="Left" Height="220" Margin="120.480,240,0,0" VerticalAlignment="Top" Width="540" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tiempo capitulo"/>
+                    <DataGridTextColumn Header="Capitulos temporada"/>
+                    <DataGridTextColumn Header="Temporada"/>
+                    <DataGridTextColumn Header="Capitulo"/>
+                    <DataGridTextColumn Header="Minuto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btniconaddser" Height="44" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Margin="730,0,0,0" Click="btn_plus_add_serie" >
+                <materialDesign:PackIcon Foreground="DarkGreen" Kind="Plus" Width="25" Height="25"/>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="grid_btnplus_juego" Visibility="Collapsed">
+            <DataGrid HorizontalAlignment="Left" Height="220" Margin="120.480,240,0,0" VerticalAlignment="Top" Width="540" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id "/>
+                    <DataGridTextColumn Header="titulo"/>
+                    <DataGridTextColumn Header="descripcion"/>
+                    <DataGridTextColumn Header="calificacion"/>
+                    <DataGridTextColumn Header="horas a invertir"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btniconaddgame" Height="44" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Margin="730,0,0,0" Click="btn_plus_add_game_Click" >
+                <materialDesign:PackIcon Foreground="DarkGreen" Kind="Plus" Width="25" Height="25"/>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="grid_btnplus_libro" Visibility="Collapsed">
+            <DataGrid HorizontalAlignment="Left" Height="220" Margin="120.480,240,0,0" VerticalAlignment="Top" Width="489" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id contenido"/>
+                    <DataGridTextColumn Header="Cantidad de paginas"/>
+                    <DataGridTextColumn Header="Paginas"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btnlibroadd" Height="44" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Margin="730,0,0,0" Click="btn_plus_add_libro" >
+                <materialDesign:PackIcon Foreground="DarkGreen" Kind="Plus" Width="25" Height="25"/>
+            </Button>
+        </Grid>
+
     </Grid>
 </Window>

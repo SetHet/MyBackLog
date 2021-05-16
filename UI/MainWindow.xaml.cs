@@ -27,13 +27,8 @@ namespace UI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new_gestionar_plataforma gestionar = new new_gestionar_plataforma();
+            Gestionar_plataforma gestionar = new Gestionar_plataforma();
             gestionar.Show();
-        }
-
-        private void Reset_BD_Click(object sender, RoutedEventArgs e)
-        {
-            Negocio.Utilidades.ResetBD();
         }
     }
 }
