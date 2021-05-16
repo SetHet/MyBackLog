@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Lógica de interacción para Editar_pelicula.xaml
+    /// Lógica de interacción para Editar_serie.xaml
     /// </summary>
-    public partial class Editar_pelicula : Window
+    public partial class Editar_serie : Window
     {
-        public Editar_pelicula()
+        public Editar_serie()
         {
             InitializeComponent();
-        }
-
-        private void cancelar_edit_pelicula_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

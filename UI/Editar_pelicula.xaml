@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="Editar_pelicula" Height="450" Width="800">
-    <Grid>
-        
+        Title="MyBackLog" Height="412.5" Width="411.875" WindowStartupLocation="CenterScreen" >
+    <Grid Background="#FF4C1130">
+        <Label Content="Editar pelicula" HorizontalAlignment="Left" Margin="128,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <Label Content="Cambiar duracion (en minutos)" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Label Content="Minutos vistos" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="104,326,0,0" VerticalAlignment="Top" Width="75" Background="#FF666666"/>
+        <Button Content="Cancelar" x:Name="cancelar_edit_pelicula" HorizontalAlignment="Left" Margin="206,326,0,0" VerticalAlignment="Top" Width="75" Background="#FF666666" Click="cancelar_edit_pelicula_Click"/>
+
     </Grid>
 </Window>

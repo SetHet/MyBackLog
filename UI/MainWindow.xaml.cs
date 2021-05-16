@@ -30,5 +30,12 @@ namespace UI
             Gestionar_plataforma gestionar = new Gestionar_plataforma();
             gestionar.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Modificar_contenido mod = new Modificar_contenido();
+            this.Close();
+            mod.Show();
+        }
     }
 }

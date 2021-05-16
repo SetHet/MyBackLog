@@ -26,7 +26,7 @@ namespace UI
 
         private void cancelar_delete_Click(object sender, RoutedEventArgs e)
         {
-            new_gestionar_plataforma gestionar = new new_gestionar_plataforma();
+            Gestionar_plataforma gestionar = new Gestionar_plataforma();
             gestionar.Show();
             this.Close();
         }
