@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Gestionar contenido" HorizontalAlignment="Left" Margin="717,0,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Gestionar contenido" HorizontalAlignment="Left" Margin="648,0,0,0" VerticalAlignment="Top" Width="144" Click="Button_Click"/>
         <Grid x:Name="Navegacion">
 
         </Grid>
@@ -26,7 +26,7 @@
 
             </Grid>
         </Grid>
-        <Button x:Name="Reset_BD"  Content="Reset BD" HorizontalAlignment="Left" Margin="707,36,0,0" VerticalAlignment="Top" Width="75" Click="Reset_BD_Click" />
+        <Button x:Name="Reset_BD"  Content="Reset BD" HorizontalAlignment="Left" Margin="658,36,0,0" VerticalAlignment="Top" Width="124" Click="Reset_BD_Click" />
 
     </Grid>
 </Window>
