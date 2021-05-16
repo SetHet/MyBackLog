@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 CREATE TABLE IF NOT EXISTS "plataforma" (
 	"id_plataforma"	INTEGER NOT NULL,
-	"titulo"	INTEGER NOT NULL,
+	"titulo"	TEXT NOT NULL,
 	"Descripcion"	TEXT,
 	PRIMARY KEY("id_plataforma" AUTOINCREMENT)
 );

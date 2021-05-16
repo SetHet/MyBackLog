@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="PlataformaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BD\BD.csproj">

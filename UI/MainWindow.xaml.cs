@@ -30,5 +30,10 @@ namespace UI
             new_gestionar_plataforma gestionar = new new_gestionar_plataforma();
             gestionar.Show();
         }
+
+        private void Reset_BD_Click(object sender, RoutedEventArgs e)
+        {
+            Negocio.Utilidades.ResetBD();
+        }
     }
 }

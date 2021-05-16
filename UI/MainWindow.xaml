@@ -26,6 +26,7 @@
 
             </Grid>
         </Grid>
+        <Button x:Name="Reset_BD"  Content="Reset BD" HorizontalAlignment="Left" Margin="707,36,0,0" VerticalAlignment="Top" Width="75" Click="Reset_BD_Click" />
 
     </Grid>
 </Window>
