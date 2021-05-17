@@ -337,4 +337,4 @@ ASALocalRun/
 *.sqlite3
 
 #Otros
-UI/bin/Debug/*
+UI/bin/[Dd]ebug/
