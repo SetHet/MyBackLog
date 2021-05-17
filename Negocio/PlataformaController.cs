@@ -26,6 +26,14 @@ namespace Negocio
             delete = db.NonQuery(nonQuery);
             return delete;
         }
+        public static bool updatePlataforma(Plataforma plataforma)
+        {
+            DataBase db = new DataBase();
+            bool update;
+            string nonQuery = $"Update plataforma set titulo = '{plataforma.Titulo}', descripcion = '{plataforma.Descripcion}' where id_plataforma = {plataforma.Id_plataforma}";
+            update = db.NonQuery(nonQuery);
+            return update;
+        }
         public static List<object[]> verPlataforma()
         {
             DataBase db = new DataBase();
