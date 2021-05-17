@@ -22,31 +22,7 @@ namespace UI
         public Gestionar_plataforma()
         {
             InitializeComponent();
-<<<<<<< Updated upstream
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Agregar_plataforma add_plataforma = new Agregar_plataforma();
-            add_plataforma.Show();
-            this.Close();
-        }
-
-        private void editplataforma_Click(object sender, RoutedEventArgs e)
-        {
-            Editar_plataforma editar_Plataforma = new Editar_plataforma();
-            editar_Plataforma.Show();
-            this.Close();
-        }
-
-        private void deleteplataforma_Click(object sender, RoutedEventArgs e)
-        {
-            Eliminar_plataforma delete = new Eliminar_plataforma();
-            delete.Show();
-            this.Close();
-        }
-    }
-=======
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -64,5 +40,5 @@ namespace UI
         }
 
     }
->>>>>>> Stashed changes
+
 }
