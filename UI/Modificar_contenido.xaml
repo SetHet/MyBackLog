@@ -15,10 +15,10 @@
         <Grid x:Name="GridMenu" Width="180" HorizontalAlignment="Left" Background="#FF666666">
             <StackPanel>
                 <Grid Height="58" HorizontalAlignment="Left">
-                    <Button x:Name="ButtonCloseMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonCloseMenu_Click">
+                    <Button x:Name="ButtonCloseMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}">
                         <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25" />
                     </Button>
-                    <Button x:Name="ButtonOpenMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonOpenMenu_Click">
+                    <Button x:Name="ButtonOpenMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" >
                         <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25"/>
                     </Button>
                 </Grid>
@@ -72,7 +72,8 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="607,72,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
+        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="607,129,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
+        <Button x:Name="agregar_contenido" Content="Agregar contenido" HorizontalAlignment="Left" Margin="607,72,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="agregar_contenido_Click"/>
 
     </Grid>
 </Window>
