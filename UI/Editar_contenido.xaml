@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="Editar_contenido" Height="679.98" Width="537.425" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF4C1130">
-        <Label Content="Editar contenido" HorizontalAlignment="Left" Margin="167,0,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+        <Label Content="Editar contenido" HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Editar titulo" HorizontalAlignment="Left" Margin="29,68,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Editar descripcion" HorizontalAlignment="Left" Margin="29,142,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Editar horas inversion" HorizontalAlignment="Left" Margin="29,321,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Seleccionar subtipo a editar" HorizontalAlignment="Left" Margin="29,413,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Seleccionar informacion a editar" HorizontalAlignment="Left" Margin="29,504,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Editar calificacion" HorizontalAlignment="Left" Margin="29,245,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="29,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox HorizontalAlignment="Left" Height="59" Margin="29,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="29,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="29,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="29,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox Foreground="White" HorizontalAlignment="Left" Height="59" Margin="29,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="29,284,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="29,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
         <ComboBox x:Name="subtipo_cbo" HorizontalAlignment="Left" Margin="29,465,0,0" VerticalAlignment="Top" Width="256">
             <ComboBoxItem x:Name="pelicula" Content="Pelicula" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="254"/>

@@ -31,17 +31,11 @@ namespace UI
             this.Close();
         }
 
-        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        private void agregar_contenido_Click(object sender, RoutedEventArgs e)
         {
-            ButtonOpenMenu.Visibility = Visibility.Visible;
-            ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            Agregar_contenido agregar = new Agregar_contenido();
+            agregar.Show();
+            this.Close();
         }
-
-        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonOpenMenu.Visibility = Visibility.Collapsed;
-            ButtonCloseMenu.Visibility = Visibility.Visible;
-        }
-
     }
 }
