@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="AdquisicionController.cs" />
     <Compile Include="ContenidoController.cs" />
+    <Compile Include="LibroController.cs" />
     <Compile Include="PlataformaController.cs" />
     <Compile Include="ProgresionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
