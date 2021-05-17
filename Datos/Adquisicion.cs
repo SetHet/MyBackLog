@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    public class Adquision
+    public class Adquisicion
     {
-        int id_progresion;
+        int id_adquisicion;
         string nombre_adquision;
 
-        public int Id_progresion { get => id_progresion; set => id_progresion = value; }
+        public int Id_adquisicion { get => id_adquisicion; set => id_adquisicion = value; }
         public string Nombre_adquision { get => nombre_adquision; set => nombre_adquision = value; }
 
         public override string ToString()
         {
-            return $"id progresion: {Id_progresion}, nombre adquision: {Nombre_adquision}";
+            return $"id progresion: {Id_adquisicion}, nombre adquision: {Nombre_adquision}";
         }
     }
 }

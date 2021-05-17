@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adquision.cs" />
+    <Compile Include="Adquisicion.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Contenido.cs" />
     <Compile Include="Juego.cs" />
