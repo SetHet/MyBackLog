@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Lógica de interacción para Editar_adquision.xaml
+    /// Lógica de interacción para Agregar_juego.xaml
     /// </summary>
-    public partial class Editar_adquision : Window
+    public partial class Agregar_juego : Window
     {
-        public Editar_adquision()
+        public Agregar_juego()
         {
             InitializeComponent();
         }
 
-        private void salir_edit_adquision_Click(object sender, RoutedEventArgs e)
+        private void salir_add_juego_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

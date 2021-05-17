@@ -15,19 +15,17 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Lógica de interacción para Eliminar_plataforma.xaml
+    /// Lógica de interacción para Agregar_serie.xaml
     /// </summary>
-    public partial class Eliminar_plataforma : Window
+    public partial class Agregar_serie : Window
     {
-        public Eliminar_plataforma()
+        public Agregar_serie()
         {
             InitializeComponent();
         }
 
-        private void cancelar_delete_Click(object sender, RoutedEventArgs e)
+        private void salir_add_serie_Click(object sender, RoutedEventArgs e)
         {
-            Gestionar_plataforma gestionar = new Gestionar_plataforma();
-            gestionar.Show();
             this.Close();
         }
     }

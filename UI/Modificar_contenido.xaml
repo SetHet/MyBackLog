@@ -6,11 +6,11 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="450" Width="800" WindowStartupLocation="CenterScreen" >
+        Title="MyBackLog" Height="569.333" Width="892" WindowStartupLocation="CenterScreen" >
 
     <Grid Background="#FF4C1130">
-        <DataGrid HorizontalAlignment="Left" Height="322" Margin="203,72,0,0" VerticalAlignment="Top" Width="392"/>
-        <Label Content="Modificar contenido" HorizontalAlignment="Left" Margin="307,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+        <DataGrid HorizontalAlignment="Left" Height="320" Margin="201,203,0,0" VerticalAlignment="Top" Width="485"/>
+        <Label Content="Modificar contenido" HorizontalAlignment="Left" Margin="330,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
 
         <Grid x:Name="GridMenu" Width="180" HorizontalAlignment="Left" Background="#FF666666">
             <StackPanel>
@@ -72,8 +72,27 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="607,129,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
-        <Button x:Name="agregar_contenido" Content="Agregar contenido" HorizontalAlignment="Left" Margin="607,72,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="agregar_contenido_Click"/>
+        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="699,142,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
+        <Button x:Name="agregar_contenido" Content="Agregar contenido" HorizontalAlignment="Left" Margin="699,79,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="agregar_contenido_Click"/>
+        <Button x:Name="deletecontent" Content="Eliminar contenido" HorizontalAlignment="Left" Margin="699,203,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" />
+        <Label Content="Filtrar por tipo" Foreground="White" HorizontalAlignment="Left" Margin="201,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Filtrar por calificacion" Foreground="White" HorizontalAlignment="Left" Margin="360,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Filtrar por plataforma" Foreground="White" HorizontalAlignment="Left" Margin="541,89,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="201,127,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Pelicula" HorizontalAlignment="Left" Width="126"/>
+            <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="126"/>
+            <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="126"/>
+            <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="126"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="536,127,0,0" VerticalAlignment="Top" Width="128"/>
+        <ComboBox HorizontalAlignment="Left" Margin="360,127,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="1 estrella" HorizontalAlignment="Left" Width="126"/>
+            <ComboBoxItem Content="2 estrellas" HorizontalAlignment="Left" Width="126"/>
+            <ComboBoxItem Content="3 estrellas" HorizontalAlignment="Left" Width="126"/>
+            <ComboBoxItem Content="4 estrellas" HorizontalAlignment="Left" Width="126"/>
+            <ComboBoxItem Content="5 estrellas" HorizontalAlignment="Left" Width="126"/>
+        </ComboBox>
+        <Button x:Name="filtrado" Content="Agregar filtros" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Width="175" Height="27" Background="#FF666666" Click="agregar_contenido_Click"/>
 
     </Grid>
 </Window>

@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MyBackLog" Height="450" Width="402.5" WindowStartupLocation="CenterScreen" >
     <Grid Background="#FF4C1130">
-        <Label Content="Editar juego" HorizontalAlignment="Left" Margin="131,0,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <Label Content="Editar juego" HorizontalAlignment="Left" Margin="130,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
         <Label Content="Editar nota" HorizontalAlignment="Left" Margin="28,86,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Editar descripcion" HorizontalAlignment="Left" Margin="28,163,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="¿Esta completado?" HorizontalAlignment="Left" Margin="28,261,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="28,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="28,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" Height="54" Margin="28,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
         <ComboBox HorizontalAlignment="Left" Margin="28,312,0,0" VerticalAlignment="Top" Width="158">
             <ComboBoxItem Content="Si" HorizontalAlignment="Left" Width="156"/>
             <ComboBoxItem Content="No" HorizontalAlignment="Left" Width="156"/>

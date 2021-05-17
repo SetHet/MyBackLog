@@ -56,25 +56,5 @@ namespace UI
             }
             
         }
-
-        private void editar_infoextra_Click(object sender, RoutedEventArgs e)
-        {
-            int indice_extra = cbo_infoextra.SelectedIndex;
-            if (indice_extra==0)
-            {
-                Editar_plataforma editar_plat = new Editar_plataforma();
-                editar_plat.Show();
-            }
-            if (indice_extra == 1)
-            {
-                Editar_adquision adquision = new Editar_adquision();
-                adquision.Show();
-            }
-            if (indice_extra == 2)
-            {
-                Editar_progresion progresion = new Editar_progresion();
-                progresion.Show();
-            }
-        }
     }
 }

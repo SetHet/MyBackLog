@@ -14,8 +14,8 @@
         <Label Content="Ingresar descripcion plataforma" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" FontSize="20" Width="291" Foreground="White" Grid.ColumnSpan="2"/>
         <Button x:Name="aceptar_add" Content="Aceptar" HorizontalAlignment="Left" Margin="165,347,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="#FF666666" Click="aceptar_add_Click"/>
         <Button x:Name="Cancelar_add" Content="Cancelar" HorizontalAlignment="Left" Margin="337,347,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="#FF666666" Click="Cancelar_add_Click"/>
-        <TextBox Foreground="White" x:Name="titulo_plataforma_add" HorizontalAlignment="Left" Height="23" Margin="50,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" Background="White"/>
-        <TextBox Foreground="White" x:Name="descripcion_plataforma_add" HorizontalAlignment="Left" Height="77" Margin="50,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" Background="White"/>
+        <TextBox Foreground="White" x:Name="titulo_plataforma_add" HorizontalAlignment="Left" Height="23" Margin="50,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235"/>
+        <TextBox Foreground="White" x:Name="descripcion_plataforma_add" HorizontalAlignment="Left" Height="77" Margin="50,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235"/>
 
     </Grid>
 </Window>

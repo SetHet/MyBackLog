@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="Editar_contenido" Height="679.98" Width="537.425" WindowStartupLocation="CenterScreen">
+        Title="Editar_contenido" Height="866.975" Width="537.425" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF4C1130">
         <Label Content="Editar contenido" HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Editar titulo" HorizontalAlignment="Left" Margin="29,68,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Editar descripcion" HorizontalAlignment="Left" Margin="29,142,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Editar horas inversion" HorizontalAlignment="Left" Margin="29,321,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Seleccionar subtipo a editar" HorizontalAlignment="Left" Margin="29,413,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <Label Content="Seleccionar informacion a editar" HorizontalAlignment="Left" Margin="29,504,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Label Content="Editar plataforma" HorizontalAlignment="Left" Margin="29,508,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Editar calificacion" HorizontalAlignment="Left" Margin="29,245,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="29,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
         <TextBox Foreground="White" HorizontalAlignment="Left" Height="59" Margin="29,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
@@ -24,15 +24,14 @@
             <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="254"/>
         </ComboBox>
-        <ComboBox x:Name="cbo_infoextra" HorizontalAlignment="Left" Margin="29,543,0,0" VerticalAlignment="Top" Width="256">
-            <ComboBoxItem Content="Plataforma" HorizontalAlignment="Left" Width="254"/>
-            <ComboBoxItem Content="Adquision" HorizontalAlignment="Left" Width="254"/>
-            <ComboBoxItem Content="Progresion" HorizontalAlignment="Left" Width="254"/>
-        </ComboBox>
         <Button x:Name="editar_subtipo" Content="Editar" HorizontalAlignment="Left" Margin="319,451,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="editar_subtipo_Click" />
-        <Button x:Name="editar_infoextra" Content="Editar" HorizontalAlignment="Left" Margin="319,529,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="editar_infoextra_Click" />
-        <Button x:Name="aceptar_editar" Content="Aceptar" HorizontalAlignment="Left" Margin="134,593,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" />
-        <Button x:Name="salir_editar" Content="Cancelar" HorizontalAlignment="Left" Margin="274,593,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="salir_editar_Click" />
+        <Button x:Name="aceptar_editar" Content="Aceptar" HorizontalAlignment="Left" Margin="125,783,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" />
+        <Button x:Name="salir_editar" Content="Cancelar" HorizontalAlignment="Left" Margin="271,783,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="salir_editar_Click" />
+        <Label Content="Editar adquision" HorizontalAlignment="Left" Margin="29,678,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Label Content="Editar progresion" HorizontalAlignment="Left" Margin="29,584,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <ComboBox HorizontalAlignment="Left" Margin="29,547,0,0" VerticalAlignment="Top" Width="256"/>
+        <ComboBox HorizontalAlignment="Left" Margin="29,635,0,0" VerticalAlignment="Top" Width="256"/>
+        <ComboBox HorizontalAlignment="Left" Margin="29,717,0,0" VerticalAlignment="Top" Width="256"/>
 
     </Grid>
 </Window>

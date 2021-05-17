@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Lógica de interacción para Editar_progresion.xaml
+    /// Lógica de interacción para Agregar_libro.xaml
     /// </summary>
-    public partial class Editar_progresion : Window
+    public partial class Agregar_libro : Window
     {
-        public Editar_progresion()
+        public Agregar_libro()
         {
             InitializeComponent();
         }
 
-        private void salir_edit_progresion_Click(object sender, RoutedEventArgs e)
+        private void salir_add_libro_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

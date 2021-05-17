@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="672.188" Width="476.562" WindowStartupLocation="CenterScreen">
+        Title="MyBackLog" Height="863.267" Width="476.562" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF4C1130">
         <Label Content="Agregar contenido" HorizontalAlignment="Left" Margin="144,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Agregar titulo" HorizontalAlignment="Left" Margin="22,71,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
@@ -17,13 +17,21 @@
         <Label Content="Agregar horas inversion" HorizontalAlignment="Left" Margin="22,344,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="22,383,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
         <Label Content="Seleccionar el subtipo" HorizontalAlignment="Left" Margin="22,427,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <ComboBox x:Name="subtipo_cbo" HorizontalAlignment="Left" Margin="22,466,0,0" VerticalAlignment="Top" Width="256">
+        <ComboBox x:Name="subtipo_add_cbo" HorizontalAlignment="Left" Margin="22,466,0,0" VerticalAlignment="Top" Width="256">
             <ComboBoxItem x:Name="pelicula" Content="Pelicula" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="254"/>
         </ComboBox>
-        <Button x:Name="agregar_subtipo" Content="Agregar datos" HorizontalAlignment="Left" Margin="299,452,0,0" VerticalAlignment="Top" Width="122" Height="36" Background="#FF666666" />
+        <Button x:Name="agregar_subtipo" Content="Agregar datos" HorizontalAlignment="Left" Margin="299,452,0,0" VerticalAlignment="Top" Width="122" Height="36" Background="#FF666666" Click="agregar_subtipo_Click" />
+        <Label Content="Editar plataforma" HorizontalAlignment="Left" Margin="29,501,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Label Content="Editar progresion" HorizontalAlignment="Left" Margin="22,584,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Label Content="Editar adquision" HorizontalAlignment="Left" Margin="29,655,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <ComboBox HorizontalAlignment="Left" Margin="29,547,0,0" VerticalAlignment="Top" Width="249"/>
+        <ComboBox HorizontalAlignment="Left" Margin="22,701,0,0" VerticalAlignment="Top" Width="256"/>
+        <ComboBox HorizontalAlignment="Left" Margin="22,618,0,0" VerticalAlignment="Top" Width="256"/>
+        <Button x:Name="aceptar_add" Content="Aceptar" HorizontalAlignment="Left" Margin="103,768,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" />
+        <Button x:Name="salir_add" Content="Cancelar" HorizontalAlignment="Left" Margin="251,768,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" RenderTransformOrigin="-0.124,-0.037" Click="salir_add_Click" />
 
     </Grid>
 </Window>
