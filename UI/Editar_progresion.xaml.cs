@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Lógica de interacción para Editar_serie.xaml
+    /// Lógica de interacción para Editar_progresion.xaml
     /// </summary>
-    public partial class Editar_serie : Window
+    public partial class Editar_progresion : Window
     {
-        public Editar_serie()
+        public Editar_progresion()
         {
             InitializeComponent();
         }
 
-        private void salir_edit_serie_Click(object sender, RoutedEventArgs e)
+        private void salir_edit_progresion_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

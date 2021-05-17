@@ -31,11 +31,10 @@ namespace UI
             gestionar.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void show_contenido_Click(object sender, RoutedEventArgs e)
         {
-            Modificar_contenido mod = new Modificar_contenido();
-            this.Close();
-            mod.Show();
+            Modificar_contenido modificar = new Modificar_contenido();
+            modificar.Show();
         }
     }
 }

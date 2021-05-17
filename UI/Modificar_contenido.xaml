@@ -8,35 +8,11 @@
         mc:Ignorable="d"
         Title="MyBackLog" Height="450" Width="800" WindowStartupLocation="CenterScreen" >
 
-    <Window.Resources>
-        <Storyboard x:Key="AbrirMenu">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        <Storyboard x:Key="CerrarMenu">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="50"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-    </Window.Resources>
-
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
-            <BeginStoryboard Storyboard="{StaticResource AbrirMenu}"/>
-        </EventTrigger>
-        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
-            <BeginStoryboard Storyboard="{StaticResource CerrarMenu}"/>
-        </EventTrigger>
-    </Window.Triggers>
-
     <Grid Background="#FF4C1130">
-        <DataGrid HorizontalAlignment="Left" Height="322" Margin="216,72,0,0" VerticalAlignment="Top" Width="392"/>
+        <DataGrid HorizontalAlignment="Left" Height="322" Margin="203,72,0,0" VerticalAlignment="Top" Width="392"/>
         <Label Content="Modificar contenido" HorizontalAlignment="Left" Margin="307,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
 
-        <Grid x:Name="GridMenu" Width="50" HorizontalAlignment="Left" Background="#FF666666">
+        <Grid x:Name="GridMenu" Width="180" HorizontalAlignment="Left" Background="#FF666666">
             <StackPanel>
                 <Grid Height="58" HorizontalAlignment="Left">
                     <Button x:Name="ButtonCloseMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonCloseMenu_Click">
@@ -96,7 +72,7 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="613,72,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
+        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="607,72,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="addplataforma_Click"/>
 
     </Grid>
 </Window>

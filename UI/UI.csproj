@@ -85,6 +85,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Editar_adquision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Editar_contenido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Editar_plataforma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editar_progresion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +132,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Editar_adquision.xaml.cs">
+      <DependentUpon>Editar_adquision.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Editar_contenido.xaml.cs">
       <DependentUpon>Editar_contenido.xaml</DependentUpon>
     </Compile>
@@ -138,6 +149,9 @@
     </Compile>
     <Compile Include="Editar_plataforma.xaml.cs">
       <DependentUpon>Editar_plataforma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_progresion.xaml.cs">
+      <DependentUpon>Editar_progresion.xaml</DependentUpon>
     </Compile>
     <Compile Include="Editar_serie.xaml.cs">
       <DependentUpon>Editar_serie.xaml</DependentUpon>

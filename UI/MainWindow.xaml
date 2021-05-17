@@ -3,12 +3,75 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Gestionar contenido" HorizontalAlignment="Left" Margin="379,94,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click"/>
-        <Button Content="Editar_plataforma" HorizontalAlignment="Left" Margin="389,206,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        Title="MyBackLog" Height="507.188" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF4C1130">
+        <Grid x:Name="GridMenu" Width="180" HorizontalAlignment="Left" Background="#FF666666">
+            <StackPanel>
+                <Grid Height="58" HorizontalAlignment="Left">
+                    <Button x:Name="ButtonCloseMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25" />
+                    </Button>
+                    <Button x:Name="ButtonOpenMenu" Height="45" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                </Grid>
+                <Grid Height="182">
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListViewItem Height="58">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Eye" Foreground="SkyBlue" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="¿Que estoy viendo?" Foreground="White" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="58">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Lightbulb" Foreground="Yellow" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <TextBlock Text="Sugerencias" Foreground="White" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="58">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Clock" Foreground="#FF932C2C" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <TextBlock Text="Pendiente" Foreground="White" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </Grid>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem Height="58">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Foreground="Black" Kind="Movie" Width="25" Height="35" VerticalAlignment="Center" Margin="10"/>
+                            <TextBlock Text="Peliculas" Foreground="White" Width="50" Height="25" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="58">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Play" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <TextBlock Text="Series" Foreground="White" Width="37" Height="25" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="58">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="GamepadClassic" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <TextBlock Text="Juegos" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="58">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BookOpenPageVariant" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <TextBlock Text="Libros" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        <Label Content="Bienvenido MyBackLog" FontSize="22" Foreground="White" HorizontalAlignment="Left" Margin="332,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="¿Que desea hacer?" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="360,54,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="show_contenido" Content="Gestionar contenido" HorizontalAlignment="Left" Margin="246,209,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="show_contenido_Click"/>
+        <Button x:Name="Show_gestion_plataforma" Content="Gestionar plataformas" HorizontalAlignment="Left" Margin="512,209,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="Button_Click"/>
 
     </Grid>
 </Window>

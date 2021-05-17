@@ -24,13 +24,13 @@
             <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="254"/>
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="29,543,0,0" VerticalAlignment="Top" Width="256">
+        <ComboBox x:Name="cbo_infoextra" HorizontalAlignment="Left" Margin="29,543,0,0" VerticalAlignment="Top" Width="256">
             <ComboBoxItem Content="Plataforma" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Adquision" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Progresion" HorizontalAlignment="Left" Width="254"/>
         </ComboBox>
         <Button x:Name="editar_subtipo" Content="Editar" HorizontalAlignment="Left" Margin="319,451,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="editar_subtipo_Click" />
-        <Button x:Name="editar_infoextra" Content="Editar" HorizontalAlignment="Left" Margin="319,529,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" />
+        <Button x:Name="editar_infoextra" Content="Editar" HorizontalAlignment="Left" Margin="319,529,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="editar_infoextra_Click" />
         <Button x:Name="aceptar_editar" Content="Aceptar" HorizontalAlignment="Left" Margin="134,593,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" />
         <Button x:Name="salir_editar" Content="Cancelar" HorizontalAlignment="Left" Margin="274,593,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="salir_editar_Click" />
 
