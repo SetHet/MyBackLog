@@ -86,7 +86,7 @@ namespace BD
         {
             SQLiteCommand command = new SQLiteCommand(sentences, this.myConnection);
             OpenConnection();
-            Console.WriteLine(">> DB: LoadStatement > " + (sentences.Length > 101 ? sentences.Substring(0, 100) : sentences) + ".......");
+            Console.WriteLine(">> DB: LoadStatement > " + (sentences.Length > 100 ? sentences.Substring(0, 100) : sentences) + ".......");
             
             try
             {
@@ -113,7 +113,7 @@ namespace BD
             SQLiteCommand command = new SQLiteCommand(sentence, this.myConnection);
             SQLiteDataReader result;
             OpenConnection();
-            Console.WriteLine(">> DB: Select > " + (sentence.Length > 101?sentence.Substring(0, 100):sentence) + ".......");
+            Console.WriteLine(">> DB: Select > " + (sentence.Length > 100?sentence.Substring(0, 100):sentence) + ".......");
 
             List<object[]> entrega = null;
             object[] row = null;

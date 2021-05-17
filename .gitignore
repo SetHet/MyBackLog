@@ -335,3 +335,6 @@ ASALocalRun/
 
 #SQLite
 *.sqlite3
+
+#Otros
+UI/bin/Debug/*
