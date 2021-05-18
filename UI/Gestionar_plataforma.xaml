@@ -76,7 +76,7 @@
             <Label Content="Gestionar plataforma" HorizontalAlignment="Left" Margin="216.479,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF" Grid.Column="1"/>
             <Button x:Name="addplataforma" Content="Agregar plataforma" HorizontalAlignment="Left" Margin="503,76,0,0" VerticalAlignment="Top" Width="188" Height="42" Background="#FF666666" Click="Button_Click" Grid.Column="1"/>
             <Button x:Name="editplataforma" Content="Editar" HorizontalAlignment="Left" Margin="503,147,0,0" VerticalAlignment="Top" Width="83" Height="42" Background="#FF666666" Click="editplataforma_Click" Grid.Column="1"/>
-            <Button x:Name="deleteplataforma" Content="Eliminar" HorizontalAlignment="Left" Margin="608,147,0,0" VerticalAlignment="Top" Width="83" Height="42" Background="#FF666666" Grid.Column="1"/>
+            <Button x:Name="deleteplataforma" Content="Eliminar" HorizontalAlignment="Left" Margin="608,147,0,0" VerticalAlignment="Top" Width="83" Height="42" Background="#FF666666" Grid.Column="1" Click="deleteplataforma_Click"/>
             <DataGrid x:Name="grid_datos" Grid.Column="1" HorizontalAlignment="Left" Height="361" Margin="112,76,0,0" VerticalAlignment="Top" Width="373">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id plataforma" Binding="{Binding Path=Id_plataforma}"/>

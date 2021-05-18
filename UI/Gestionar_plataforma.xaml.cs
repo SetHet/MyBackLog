@@ -54,6 +54,11 @@ namespace UI
             this.Close();
         }
 
+        private void deleteplataforma_Click(object sender, RoutedEventArgs e)
+        {
+            Eliminar_plataforma del = new Eliminar_plataforma();
+            del.Show();
+        }
     }
 
 }

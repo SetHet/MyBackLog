@@ -129,6 +129,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Eliminar_plataforma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -172,6 +176,9 @@
     </Compile>
     <Compile Include="Editar_serie.xaml.cs">
       <DependentUpon>Editar_serie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_plataforma.xaml.cs">
+      <DependentUpon>Eliminar_plataforma.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
