@@ -22,7 +22,22 @@ namespace UI
         public Gestionar_plataforma()
         {
             InitializeComponent();
+            Listar();
+        }
 
+        private void Listar()
+        {
+            grid_datos.Items.Clear();
+            List<object[]> ListPlataforma = Negocio.PlataformaController.verPlataforma();
+            if (ListPlataforma != null)
+            {                
+                foreach (var item in ListPlataforma)
+                {
+                    var datos = new Datos.Plataforma { Id_plataforma = int.Parse(item.GetValue(0).ToString()), Titulo = item.GetValue(1).ToString(), Descripcion = item.GetValue(2).ToString() };
+                    grid_datos.Items.Add(datos);
+
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
