@@ -19,6 +19,11 @@ namespace UI
     /// </summary>
     public partial class Gestionar_plataforma : Window
     {
+        #region Variables
+        List<Datos.Plataforma> ListPlataforma;
+        #endregion
+
+
         public Gestionar_plataforma()
         {
             InitializeComponent();
@@ -28,14 +33,12 @@ namespace UI
         private void Listar()
         {
             grid_datos.Items.Clear();
-            List<object[]> ListPlataforma = Negocio.PlataformaController.verPlataforma();
+            ListPlataforma = Negocio.PlataformaController.listaPlataformas();
             if (ListPlataforma != null)
             {                
                 foreach (var item in ListPlataforma)
                 {
-                    var datos = new Datos.Plataforma { Id_plataforma = int.Parse(item.GetValue(0).ToString()), Titulo = item.GetValue(1).ToString(), Descripcion = item.GetValue(2).ToString() };
-                    grid_datos.Items.Add(datos);
-
+                    grid_datos.Items.Add(item);
                 }
             }
         }
@@ -49,15 +52,29 @@ namespace UI
 
         private void editplataforma_Click(object sender, RoutedEventArgs e)
         {
-            Editar_plataforma editar_Plataforma = new Editar_plataforma();
+            int index = grid_datos.SelectedIndex;
+            int id = index > -1 ? ListPlataforma[index].Id_plataforma : -1;
+            Editar_plataforma editar_Plataforma = new Editar_plataforma(id);
             editar_Plataforma.Show();
             this.Close();
         }
 
         private void deleteplataforma_Click(object sender, RoutedEventArgs e)
         {
-            Eliminar_plataforma del = new Eliminar_plataforma();
-            del.Show();
+            //Eliminar_plataforma del = new Eliminar_plataforma();
+            //del.Show();
+
+            int select = grid_datos.SelectedIndex;
+
+            if (select == -1)
+            {
+                MessageBox.Show("Seleccione una plataforma");
+                return;
+            }
+
+            Negocio.PlataformaController.eliminarPlataforma(ListPlataforma[select].Id_plataforma);
+
+            Listar();
         }
     }
 
