@@ -22,7 +22,7 @@ namespace UI
     public partial class Gestion_contenido : Window
     {
         #region Variables
-        public int id_plataforma = -1;
+        public int id_contenido = -1;
         public Modo modo = Modo.create;
         public Contenido contenido;
         public Libro libro;
@@ -44,11 +44,11 @@ namespace UI
         {
             InitializeComponent();
             CargarComboBox();
-            if (id_plataforma > -1) //Update?
+            if (id_contenido > -1) //Update?
             {
                 //Configurar Update
                 modo = Modo.update;
-                id_plataforma = id_plat;
+                id_contenido = id_plat;
                 CargarDatosUpdate();
             }
         }
@@ -91,7 +91,7 @@ namespace UI
         private void CargarDatosUpdate()
         {
             //Conseguir datos contenido
-            contenido = ContenidoController.getContenido(id_plataforma);
+            contenido = ContenidoController.getContenido(id_contenido);
 
             Txt_Titulo.Text = contenido.Titulo;
             Txt_Descripcion.Text = contenido.Descripcion;
@@ -99,11 +99,25 @@ namespace UI
             ComboBox_Plataforma.SelectedIndex = lista_plataformas.FindIndex(x => x.Id_plataforma == contenido.Id_plataforma);
             ComboBox_Progresion.SelectedIndex = lista_progresion.FindIndex(x => x.Id_progresion == contenido.Id_progresion);
             ComboBox_Adquisicion.SelectedIndex = lista_adquisiciones.FindIndex(x => x.Id_adquisicion == contenido.Id_adquisicion);
-            
+
 
             //Cargar Contenido Libro
+            libro = LibroController.getLibro(contenido.Id_contenido);
+            if (libro != null)
+            {
+                Txt_Libro_CantidadPaginas.Text = libro.Cantidad_paginas.ToString();
+                Txt_Libro_PaginaActual.Text = libro.Pagina.ToString();
+                subtipo_cbo.SelectedIndex = 0;
+            }
 
             //Cargar Contenido Pelicula
+            pelicula = PeliculaController.getPelicula(contenido.Id_contenido);
+            if (pelicula != null)
+            {
+                Txt_Pelicula_Duracion.Text = pelicula.Duracion_minutos.ToString();
+                Txt_Pelicula_Minuto.Text = pelicula.Minuto.ToString();
+                subtipo_cbo.SelectedIndex = 1;
+            }
 
             //Cargar Contenido Serie
 
@@ -308,13 +322,204 @@ namespace UI
 
                 #endregion
 
-                
+
             }
 
             //Modificar Contenido
             if (modo == Modo.update)
             {
+                contenido = new Contenido();
 
+                #region TextBox
+                contenido.Id_contenido = id_contenido;
+                contenido.Titulo = Txt_Titulo.Text;
+                contenido.Descripcion = Txt_Descripcion.Text;
+                contenido.Calificacion = int.Parse(Txt_Calificacion.Text);
+                contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
+                #endregion
+
+                #region ComboBox
+                if (ComboBox_Plataforma.SelectedIndex != -1)
+                {
+                    contenido.Id_plataforma = lista_plataformas[ComboBox_Plataforma.SelectedIndex].Id_plataforma;
+                }
+                else
+                {
+                    MessageBox.Show("Se debe seleccionar una plataforma", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (ComboBox_Progresion.SelectedIndex != -1)
+                {
+                    contenido.Id_progresion = lista_progresion[ComboBox_Progresion.SelectedIndex].Id_progresion;
+                }
+                else
+                {
+                    MessageBox.Show("Se debe seleccionar una progresion", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (ComboBox_Adquisicion.SelectedIndex != -1)
+                {
+                    contenido.Id_adquisicion = lista_adquisiciones[ComboBox_Adquisicion.SelectedIndex].Id_adquisicion;
+                }
+                else
+                {
+                    MessageBox.Show("Se debe seleccionar una adquisicion", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                #endregion
+
+                //Subtipos
+                if (subtipo_cbo.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Se debe seleccionar un subtipo");
+                    return;
+                }
+                libro = null;
+                pelicula = null;
+                serie = null;
+                juego = null;
+
+                #region Libro
+                if (subtipo_cbo.SelectedIndex == 0)
+                {
+                    libro = new Libro();
+                    libro.Cantidad_paginas = int.Parse(Txt_Libro_CantidadPaginas.Text);
+                    libro.Pagina = int.Parse(Txt_Libro_PaginaActual.Text);
+                }
+                #endregion
+
+                #region Pelicula
+                if (subtipo_cbo.SelectedIndex == 1)
+                {
+                    pelicula = new Pelicula();
+                    pelicula.Duracion_minutos = int.Parse(Txt_Pelicula_Duracion.Text);
+                    pelicula.Minuto = int.Parse(Txt_Pelicula_Minuto.Text);
+                }
+                #endregion
+
+                #region Serie
+                if (subtipo_cbo.SelectedIndex == 2)
+                {
+                    MessageBox.Show("Aun no se puede serie", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                #endregion
+
+                #region Juego
+                if (subtipo_cbo.SelectedIndex == 3)
+                {
+                    MessageBox.Show("Aun no se puede juego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                #endregion
+
+                #region Cargar contenido
+                if (ContenidoController.updateContenido(contenido))
+                {
+                    MessageBox.Show("Actualizacion de Contenido correcto");
+                }
+                else
+                {
+                    MessageBox.Show("Actualizacion de Contenido no ha funcionado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+
+                bool correcto_subtipo = false;
+
+                //Libro
+                if (libro != null)
+                {
+                    PeliculaController.deletePelicula(id_contenido);
+                    MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en libro");
+
+                    libro.Id_contenido = id_contenido;
+                    if (LibroController.existLibro(id_contenido)) {
+                        if (correcto_subtipo = LibroController.updateLibro(libro))
+                        {
+                            MessageBox.Show("Ingresado correctamente Libro");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Libro no se ha actualizado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (correcto_subtipo = LibroController.insertLibro(libro))
+                        {
+                            MessageBox.Show("Ingresado correctamente Libro");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Libro no se ha ingresado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+
+                //Pelicula
+                if (pelicula != null)
+                {
+                    LibroController.deleteLibro(id_contenido);
+                    MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en pelicula");
+
+                    pelicula.Id_contenido = id_contenido;
+                    if (PeliculaController.existPelicula(id_contenido))
+                    {
+                        if (correcto_subtipo = PeliculaController.updatePelicula(pelicula))
+                        {
+                            MessageBox.Show("Actualizado correctamente Pelicula");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Pelicula no se ha actualizado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (correcto_subtipo = PeliculaController.insertPelicula(pelicula))
+                        {
+                            MessageBox.Show("Ingresado correctamente Pelicula");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Pelicula no se ha ingresado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }   
+                    }
+                }
+
+                //Serie
+                if (serie != null)
+                {
+                    serie.Id_contenido = id_contenido;
+
+                    MessageBox.Show("Aun no esta pelicula", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                //Juego
+                if (juego != null)
+                {
+                    juego.Id_contenido = id_contenido;
+
+                    MessageBox.Show("Aun no esta juego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                if (!correcto_subtipo)
+                {
+                    if (ContenidoController.deleteContenido(id_contenido))
+                    {
+                        MessageBox.Show("Eliminacion de contenido de emergencia: Exitoso", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Eliminacion de contenido de emergencia: Fallo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    return;
+                }
+
+                #endregion
             }
 
             CerrarVentana();

@@ -40,12 +40,7 @@ namespace UI
             }
         }
 
-        private void addplataforma_Click(object sender, RoutedEventArgs e)
-        {
-            Editar_contenido editar = new Editar_contenido();
-            editar.Show();
-            this.Close();
-        }
+       
 
         private void agregar_contenido_Click(object sender, RoutedEventArgs e)
         {
@@ -70,6 +65,13 @@ namespace UI
             }
 
             Llenar();
+        }
+
+        private void modificar_contenido_Click(object sender, RoutedEventArgs e)
+        {
+            Editar_contenido editar = new Editar_contenido();
+            editar.Show();
+            this.Close();
         }
     }
 }

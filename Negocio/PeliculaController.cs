@@ -75,7 +75,7 @@ namespace Negocio
             return peli;
         }
 
-        public static bool existLibro(int index)
+        public static bool existPelicula(int index)
         {
             return getPelicula(index) != null;
         }
