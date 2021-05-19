@@ -87,21 +87,21 @@ namespace Negocio
         {
             DataBase db = new DataBase();
 
-            string query = "select id_contenido, titulo, descripcion, calificacion, horas_inversion, id_plataforma, id_progresion, id_adquisicion from contenido where = " + index;
+            string query = "select id_contenido, titulo, descripcion, calificacion, horas_inversion, id_plataforma, id_progresion, id_adquisicion from contenido where id_contenido = " + index;
             List<object[]> lista_codificada = db.Select(query);
 
             if (lista_codificada == null || lista_codificada.Count == 0) return null;
 
             object[] row = lista_codificada[0];
             Contenido contenido = new Contenido();
-            contenido.Id_contenido = (int)row[0];
+            contenido.Id_contenido = int.Parse(row[0].ToString());
             contenido.Titulo = (string)row[1];
             contenido.Descripcion = (string)row[2];
-            contenido.Calificacion = (int)row[3];
-            contenido.Horas_inversion = (int)row[4];
-            contenido.Id_plataforma = (int)row[5];
-            contenido.Id_progresion = (int)row[6];
-            contenido.Id_adquisicion = (int)row[7];
+            contenido.Calificacion = int.Parse(row[3].ToString());
+            contenido.Horas_inversion = int.Parse(row[4].ToString());
+            contenido.Id_plataforma = int.Parse(row[5].ToString());
+            contenido.Id_progresion = int.Parse(row[6].ToString());
+            contenido.Id_adquisicion = int.Parse(row[7].ToString());
         
             return contenido;
         }

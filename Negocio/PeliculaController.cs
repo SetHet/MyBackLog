@@ -49,9 +49,9 @@ namespace Negocio
                 foreach (var row in select)
                 {
                     Pelicula peli = new Pelicula();
-                    peli.Id_contenido = (int)row[0];
-                    peli.Duracion_minutos = (int)row[1];
-                    peli.Minuto = (int)row[2];
+                    peli.Id_contenido = int.Parse(row[0].ToString());
+                    peli.Duracion_minutos = int.Parse(row[1].ToString());
+                    peli.Minuto = int.Parse(row[2].ToString());
                     lista.Add(peli);
                 }
             }
@@ -69,9 +69,9 @@ namespace Negocio
 
             object[] row = select[0];
             Pelicula peli = new Pelicula();
-            peli.Id_contenido = (int)row[0];
-            peli.Duracion_minutos = (int)row[1];
-            peli.Minuto = (int)row[2];
+            peli.Id_contenido = int.Parse(row[0].ToString());
+            peli.Duracion_minutos = int.Parse(row[1].ToString());
+            peli.Minuto = int.Parse(row[2].ToString());
             return peli;
         }
 

@@ -49,9 +49,9 @@ namespace Negocio
                 foreach (var row in select)
                 {
                     Libro libro = new Libro();
-                    libro.Id_contenido = (int)row[0];
-                    libro.Cantidad_paginas = (int)row[1];
-                    libro.Pagina = (int)row[2];
+                    libro.Id_contenido = int.Parse(row[0].ToString());
+                    libro.Cantidad_paginas = int.Parse(row[1].ToString());
+                    libro.Pagina = int.Parse(row[2].ToString());
                     lista.Add(libro);
                 }
             }
@@ -69,9 +69,9 @@ namespace Negocio
 
             object[] row = select[0];
             Libro libro = new Libro();
-            libro.Id_contenido = (int)row[0];
-            libro.Cantidad_paginas = (int)row[1];
-            libro.Pagina = (int)row[2];
+            libro.Id_contenido = int.Parse(row[0].ToString());
+            libro.Cantidad_paginas = int.Parse(row[1].ToString());
+            libro.Pagina = int.Parse(row[2].ToString());
             return libro;
         }
 

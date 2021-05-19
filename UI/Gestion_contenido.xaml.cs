@@ -40,15 +40,16 @@ namespace UI
         }
         #endregion
 
-        public Gestion_contenido(int id_plat = -1)
+        public Gestion_contenido(int id_cont = -1)
         {
             InitializeComponent();
+            
             CargarComboBox();
-            if (id_contenido > -1) //Update?
+            if (id_cont > -1) //Update?
             {
                 //Configurar Update
                 modo = Modo.update;
-                id_contenido = id_plat;
+                id_contenido = id_cont;
                 CargarDatosUpdate();
             }
         }
@@ -96,6 +97,7 @@ namespace UI
             Txt_Titulo.Text = contenido.Titulo;
             Txt_Descripcion.Text = contenido.Descripcion;
             Txt_Calificacion.Text = contenido.Calificacion.ToString();
+            Txt_Horas_Inversion.Text = contenido.Horas_inversion.ToString();
             ComboBox_Plataforma.SelectedIndex = lista_plataformas.FindIndex(x => x.Id_plataforma == contenido.Id_plataforma);
             ComboBox_Progresion.SelectedIndex = lista_progresion.FindIndex(x => x.Id_progresion == contenido.Id_progresion);
             ComboBox_Adquisicion.SelectedIndex = lista_adquisiciones.FindIndex(x => x.Id_adquisicion == contenido.Id_adquisicion);
@@ -439,7 +441,7 @@ namespace UI
                     if (LibroController.existLibro(id_contenido)) {
                         if (correcto_subtipo = LibroController.updateLibro(libro))
                         {
-                            MessageBox.Show("Ingresado correctamente Libro");
+                            MessageBox.Show("actualizado correctamente Libro");
                         }
                         else
                         {
@@ -527,6 +529,8 @@ namespace UI
 
         public void CerrarVentana()
         {
+            Modificar_contenido modificar = new Modificar_contenido();
+            modificar.Show();
             this.Close();
         }
     }

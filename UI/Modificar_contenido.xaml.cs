@@ -69,7 +69,14 @@ namespace UI
 
         private void modificar_contenido_Click(object sender, RoutedEventArgs e)
         {
-            Editar_contenido editar = new Editar_contenido();
+            int select = info.SelectedIndex;
+            if (select == -1)
+            {
+                MessageBox.Show("Se debe seleccionar un contenido", "Aviso", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
+            
+            Gestion_contenido editar = new Gestion_contenido(Contenidos[select].Id_contenido);
             editar.Show();
             this.Close();
         }
