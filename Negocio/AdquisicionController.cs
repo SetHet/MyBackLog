@@ -26,7 +26,7 @@ namespace Negocio
                 foreach (var row in select)
                 {
                     Adquisicion adquisicion = new Adquisicion();
-                    adquisicion.Id_adquisicion = (int)row[0];
+                    adquisicion.Id_adquisicion = int.Parse(row[0].ToString());
                     adquisicion.Nombre_adquision = (string)row[1];
                     lista.Add(adquisicion);
                 }

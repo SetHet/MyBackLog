@@ -25,7 +25,7 @@ namespace Negocio
                 foreach (var row in select)
                 {
                     Progresion progresion = new Progresion();
-                    progresion.Id_progresion = (int)row[0];
+                    progresion.Id_progresion = int.Parse(row.GetValue(0).ToString());
                     progresion.Nombre_estado = (string)row[1];
                     progresion.Descripcion = (string)row[2];
                     lista.Add(progresion);
