@@ -109,7 +109,7 @@ namespace UI
             int idAd = Adquisicion[cboAdquisicion.SelectedIndex].Id_adquisicion;
             int idPla = Plataformas[cboPlataforma.SelectedIndex].Id_plataforma;
             int idPro = Progresion[cboProg.SelectedIndex].Id_progresion;
-            int idCont = subtipo_add_cbo.SelectedIndex;
+            int idCont = subtipo_add_cbo.SelectedIndex +1;
             Contenido contenido = new Contenido
             {
                 Titulo = txtTitulo.Text,

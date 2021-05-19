@@ -19,9 +19,25 @@ namespace UI
     /// </summary>
     public partial class Modificar_contenido : Window
     {
+        private List<Datos.Contenido> Contenidos;
+
         public Modificar_contenido()
         {
             InitializeComponent();
+            Llenar();
+        }
+
+        private void Llenar()
+        {
+            info.Items.Clear();
+            Contenidos = Negocio.ContenidoController.listarContenido();
+            if (Contenidos !=null)
+            {
+                foreach (var item in Contenidos)
+                {
+                    info.Items.Add(item);
+                }
+            }
         }
 
         private void addplataforma_Click(object sender, RoutedEventArgs e)

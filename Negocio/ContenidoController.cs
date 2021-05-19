@@ -63,14 +63,14 @@ namespace Negocio
                 foreach (var row in lista_codificada)
                 {
                     Contenido contenido = new Contenido();
-                    contenido.Id_contenido = (int)row[0];
+                    contenido.Id_contenido = int.Parse(row[0].ToString());
                     contenido.Titulo = (string)row[1];
                     contenido.Descripcion = (string)row[2];
-                    contenido.Calificacion = (int)row[3];
-                    contenido.Horas_inversion = (int)row[4];
-                    contenido.Id_plataforma = (int)row[5];
-                    contenido.Id_progresion = (int)row[6];
-                    contenido.Id_adquisicion = (int)row[7];
+                    contenido.Calificacion = int.Parse(row[3].ToString());
+                    contenido.Horas_inversion = int.Parse(row[4].ToString());
+                    contenido.Id_plataforma = int.Parse(row[5].ToString());
+                    contenido.Id_progresion = int.Parse(row[6].ToString());
+                    contenido.Id_adquisicion = int.Parse(row[7].ToString());
                     lista.Add(contenido);
                 }
 
