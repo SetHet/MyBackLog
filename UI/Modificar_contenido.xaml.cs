@@ -53,5 +53,23 @@ namespace UI
             agregar.Show();
             this.Close();
         }
+
+        private void deleteplataforma_Click(object sender, RoutedEventArgs e)
+        {
+            //Eliminar_plataforma del = new Eliminar_plataforma();
+            //del.Show();
+
+            int select = info.SelectedIndex;
+
+            if (select == -1)
+            {
+                MessageBox.Show("Seleccione una plataforma");
+                return;
+            }
+
+            Negocio.ContenidoController.deleteContenido(Contenidos[select].Id_plataforma);
+
+            Llenar();
+        }
     }
 }
