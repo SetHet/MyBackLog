@@ -50,7 +50,7 @@ namespace Negocio
             foreach (var row in lista_codificada)
             {
                 Datos.Plataforma plataforma = new Plataforma();
-                plataforma.Id_plataforma = int.Parse(row.GetValue(0).ToString());
+                plataforma.Id_plataforma = int.Parse(row[0].ToString());
                 plataforma.Titulo = (string)row[1];
                 plataforma.Descripcion = (string)row[2];
                 lista.Add(plataforma);
@@ -69,7 +69,7 @@ namespace Negocio
             if (lista == null || lista.Count == 0) return null;
 
             Plataforma plataforma = new Plataforma();
-            plataforma.Id_plataforma = (int)lista[0][0];
+            plataforma.Id_plataforma = int.Parse(lista[0][0].ToString());
             plataforma.Titulo = (string)lista[0][1];
             plataforma.Descripcion = (string)lista[0][2];
 

@@ -33,6 +33,19 @@ namespace UI
 
         private void aceptar_add_Click(object sender, RoutedEventArgs e)
         {
+            //Comprobaciones
+            if (titulo_plataforma_add == null || titulo_plataforma_add.Text.Length == 0)
+            {
+                MessageBox.Show("Ingrese titulo");
+                return;
+            }
+
+            if (descripcion_plataforma_add == null || descripcion_plataforma_add.Text.Length == 0)
+            {
+                descripcion_plataforma_add.Text = "";
+            }
+
+            //Cargar
             Datos.Plataforma plataforma = new Datos.Plataforma
             {
                 Titulo = titulo_plataforma_add.Text,
@@ -46,6 +59,8 @@ namespace UI
             {
                 MessageBox.Show("Error");
             }
+
+            Cancelar_add_Click(sender, e);
         }
     }
 }
