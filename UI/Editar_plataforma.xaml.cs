@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using Datos;
+using Negocio;
 
 namespace UI
 {
@@ -22,6 +24,8 @@ namespace UI
     {
         #region Variables
         public int id_editar = -1;
+        private Libro libro;
+        private Pelicula pelicula;
         #endregion
 
         public Editar_plataforma(int id = -1)
