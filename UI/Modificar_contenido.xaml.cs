@@ -49,8 +49,8 @@ namespace UI
 
         private void agregar_contenido_Click(object sender, RoutedEventArgs e)
         {
-            Agregar_contenido agregar = new Agregar_contenido();
-            agregar.Show();
+            Gestion_contenido ges = new Gestion_contenido();
+            ges.Show();
             this.Close();
         }
 
