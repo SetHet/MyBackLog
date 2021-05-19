@@ -30,8 +30,14 @@ namespace Negocio
 
             DataBase db = new DataBase();
             string nonQuery = "delete from contenido where id_contenido = " +  index;
-
-            correcto = db.NonQuery(nonQuery);
+            try
+            {
+                correcto = db.NonQuery(nonQuery);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(">>>>>>>>>>>>>"+ex);
+            }
 
             return correcto;
         }
