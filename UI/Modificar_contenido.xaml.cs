@@ -67,8 +67,6 @@ namespace UI
                 {
                     Console.WriteLine("Eliminar");
                 }
-
-
             }
 
             Llenar();

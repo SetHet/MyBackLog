@@ -27,7 +27,7 @@ namespace UI
         private List<string> Adquisicion_mostrar;
         private List<Plataforma> Plataformas;
         private List<string> Plataforma_mostra;
-
+        
         public Agregar_contenido()
         {
             InitializeComponent();
@@ -123,7 +123,7 @@ namespace UI
             };
             if (ContenidoController.insertContenido(contenido))
             {
-                MessageBox.Show("Añadido con éxito");
+                MessageBox.Show("Añadido con éxito");             
             }
             else
             {

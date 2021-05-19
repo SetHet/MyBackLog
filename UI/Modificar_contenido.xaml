@@ -99,6 +99,5 @@
             <ComboBoxItem Content="5 estrellas" HorizontalAlignment="Left" Width="126"/>
         </ComboBox>
         <Button x:Name="filtrado" Content="Agregar filtros" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Width="175" Height="27" Background="#FF666666" Click="agregar_contenido_Click"/>
-
     </Grid>
 </Window>

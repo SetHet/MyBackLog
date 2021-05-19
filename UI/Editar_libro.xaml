@@ -10,9 +10,9 @@
         <Label Content="Editar libro" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Ingresar cantidad de paginas" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="23,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.424,-0.745"/>
         <Label Content="Pagina actual" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="23,190,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="aceptar_edit_libro" Content="Aceptar" HorizontalAlignment="Left" Margin="84,349,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="#FF666666"/>
+        <Button x:Name="aceptar_edit_libro" Click="aceptar_edit_libro_Click" Content="Aceptar" HorizontalAlignment="Left" Margin="84,349,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="#FF666666"/>
         <Button x:Name="salir_edit_libro" Content="Cancelar" HorizontalAlignment="Left" Margin="189,349,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="#FF666666" Click="salir_edit_libro_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="28,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
+        <TextBox x:Name="txtPaginas" HorizontalAlignment="Left" Height="23" Margin="28,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="28,229,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
 
     </Grid>

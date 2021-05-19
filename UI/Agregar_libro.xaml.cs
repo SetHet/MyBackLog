@@ -28,5 +28,10 @@ namespace UI
         {
             this.Close();
         }
+
+        private void aceptar_add_libro_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
