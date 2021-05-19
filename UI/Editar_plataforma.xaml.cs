@@ -24,8 +24,7 @@ namespace UI
     {
         #region Variables
         public int id_editar = -1;
-        private Libro libro;
-        private Pelicula pelicula;
+        
         #endregion
 
         public Editar_plataforma(int id = -1)

@@ -110,5 +110,19 @@ namespace Negocio
         {
             return getContenido(index) != null;
         }
+
+        public static int LastID()
+        {
+            DataBase db = new DataBase();
+
+            string query = "select MAX(id_contenido) from contenido";
+            List<object[]> lista_codificada = db.Select(query);
+
+            if (lista_codificada == null || lista_codificada.Count == 0) return 0;
+
+            object[] row = lista_codificada[0];
+            
+            return int.Parse(row[0].ToString());
+        }
     }
 }

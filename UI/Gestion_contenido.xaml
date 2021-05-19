@@ -9,38 +9,38 @@
     <Grid Background="#FF4C1130">
         <Label Content="Agregar o editar contenido" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Titulo" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="10,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox Foreground="White" HorizontalAlignment="Left" Height="59" Margin="10,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="Txt_Titulo" Foreground="White" HorizontalAlignment="Left" Height="23" Margin="10,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="Txt_Descripcion" Foreground="White" HorizontalAlignment="Left" Height="59" Margin="10,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Calificacion" HorizontalAlignment="Left" Margin="13,256,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="13,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="Txt_Calificacion" Foreground="White" HorizontalAlignment="Left" Height="23" Margin="13,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
         <Label Content="Editar horas inversion" HorizontalAlignment="Left" Margin="13,328,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="13,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="Txt_Horas_Inversion" Foreground="White" HorizontalAlignment="Left" Height="23" Margin="13,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
         <Label Content="Plataforma" HorizontalAlignment="Left" Margin="14,395,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <ComboBox HorizontalAlignment="Left" Margin="14,434,0,0" VerticalAlignment="Top" Width="256"/>
+        <ComboBox x:Name="ComboBox_Plataforma" HorizontalAlignment="Left" Margin="14,434,0,0" VerticalAlignment="Top" Width="256"/>
         <Label Content="Progresion" HorizontalAlignment="Left" Margin="14,473,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <ComboBox HorizontalAlignment="Left" Margin="14,512,0,0" VerticalAlignment="Top" Width="256"/>
+        <ComboBox x:Name="ComboBox_Progresion" HorizontalAlignment="Left" Margin="14,512,0,0" VerticalAlignment="Top" Width="256"/>
         <Label Content="Adquision" HorizontalAlignment="Left" Margin="14,556,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <ComboBox HorizontalAlignment="Left" Margin="14,607,0,0" VerticalAlignment="Top" Width="256"/>
-        <Button x:Name="aceptar_editar" Content="Aceptar" HorizontalAlignment="Left" Margin="239,666,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" />
+        <ComboBox x:Name="ComboBox_Adquisicion" HorizontalAlignment="Left" Margin="14,607,0,0" VerticalAlignment="Top" Width="256"/>
+        <Button x:Name="aceptar_editar" Content="Aceptar" HorizontalAlignment="Left" Margin="239,666,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="aceptar_editar_Click" />
         <Button x:Name="salir_editar" Content="Cancelar" HorizontalAlignment="Left" Margin="383,666,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="salir_editar_Click" />
         <Label Content="Seleccionar subtipo" HorizontalAlignment="Left" Margin="420,66,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" RenderTransformOrigin="2.274,-8.706"/>
-        <ComboBox x:Name="subtipo_cbo" HorizontalAlignment="Left" Margin="420,106,0,0" VerticalAlignment="Top" Width="256">
-            <ComboBoxItem x:Name="pelicula" Content="Pelicula" HorizontalAlignment="Left" Width="254"/>
-            <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="254"/>
-            <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="254"/>
+        <ComboBox x:Name="subtipo_cbo" HorizontalAlignment="Left" Margin="420,106,0,0" VerticalAlignment="Top" Width="256" SelectionChanged="subtipo_cbo_SelectionChanged">
             <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="254"/>
+            <ComboBoxItem Content="Pelicula" HorizontalAlignment="Left" Width="254"/>
+            <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="254"/>
+            <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="254"/>
         </ComboBox>
-        <Button x:Name="editar_subtipo" Content="Editar" HorizontalAlignment="Left" Margin="697,92,0,0" VerticalAlignment="Top" Width="85" Height="36" Background="#FF666666" Click="editar_subtipo_Click"/>
+        
         <Grid Visibility="Collapsed" x:Name="pelicula_grid" HorizontalAlignment="Left" Height="332" Margin="421,164,0,0" VerticalAlignment="Top" Width="350">
             <Label Content="Agregar duracion (en minutos)" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <TextBox Foreground="White" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+            <TextBox x:Name="Txt_Pelicula_Duracion" Foreground="White" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
             <Label Content="Minutos vistos" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <TextBox HorizontalAlignment="Left" Foreground="White" Height="23" Margin="10,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+            <TextBox x:Name="Txt_Pelicula_Minuto" HorizontalAlignment="Left" Foreground="White" Height="23" Margin="10,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
         </Grid>
         <Grid x:Name="grid_juego" Visibility="Collapsed" HorizontalAlignment="Left" Height="275" Margin="421,181,0,0" VerticalAlignment="Top" Width="330">
             <Label Content="Agregar nota" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
+            <TextBox x:Name="Txt_Juego_Nota" HorizontalAlignment="Left" Height="23" Margin="10,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
             <Label Content="Editar descripcion" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
             <TextBox HorizontalAlignment="Left" Height="54" Margin="10,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
             <Label Content="¿Esta completado?" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
@@ -63,9 +63,9 @@
         </Grid>
         <Grid x:Name="grid_libro" Visibility="Collapsed" HorizontalAlignment="Left" Height="262" Margin="420,167,0,0" VerticalAlignment="Top" Width="351">
             <Label Content="Agregar cantidad de paginas" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.424,-0.745"/>
-            <TextBox x:Name="txtPaginas" HorizontalAlignment="Left" Height="23" Margin="10,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
+            <TextBox x:Name="Txt_Libro_CantidadPaginas" HorizontalAlignment="Left" Height="23" Margin="10,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
             <Label Content="Pagina actual" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
+            <TextBox x:Name="Txt_Libro_PaginaActual" HorizontalAlignment="Left" Height="23" Margin="10,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
         </Grid>
 
     </Grid>
