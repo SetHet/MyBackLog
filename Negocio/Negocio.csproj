@@ -63,7 +63,9 @@
   <ItemGroup>
     <Compile Include="AdquisicionController.cs" />
     <Compile Include="ContenidoController.cs" />
+    <Compile Include="JuegoController.cs" />
     <Compile Include="LibroController.cs" />
+    <Compile Include="NotaController.cs" />
     <Compile Include="PeliculaController.cs" />
     <Compile Include="PlataformaController.cs" />
     <Compile Include="ProgresionController.cs" />
