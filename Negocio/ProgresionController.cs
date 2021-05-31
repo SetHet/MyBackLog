@@ -43,7 +43,7 @@ namespace Negocio
 
             List<object[]> select = db.Select(query);
 
-            if (select == null && select.Count == 0) return null;
+            if (select == null || select.Count == 0) return null;
 
             object[] row = select[0];
 
