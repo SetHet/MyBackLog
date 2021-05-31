@@ -71,7 +71,7 @@ namespace Negocio
                 nota.Id_nota = int.Parse(row[0].ToString());
                 nota.Id_contenido = int.Parse(row[1].ToString());
                 nota.Descripcion = row[2].ToString();
-                nota.Completado = bool.Parse(row[3].ToString());
+                nota.Completado = row[3].ToString() == "1";
                 lista.Add(nota);
             }
 
