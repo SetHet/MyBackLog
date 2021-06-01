@@ -125,7 +125,12 @@ namespace UI
             //Cargar Contenido Serie
 
             //Cargar Contenido Juego
-            JuegoPreparativos();
+            juego = JuegoController.get(contenido.Id_contenido);
+            if (juego != null)
+            {
+                subtipo_cbo.SelectedIndex = 3;
+                JuegoPreparativos();
+            }
         }
 
         private void subtipo_cbo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -248,7 +253,7 @@ namespace UI
                 if (subtipo_cbo.SelectedIndex == 3)
                 {
                     juego = new Juego();
-                    return;
+                    
                 }
                 #endregion
 
@@ -310,7 +315,7 @@ namespace UI
                     if (correcto_subtipo = JuegoController.insert(juego))
                     {
                         MessageBox.Show("Ingresado correctamente Juego");
-                        correcto_subtipo = NotasModificar();
+                        correcto_subtipo = NotasModificar(id_contenido);
                     }
                     else
                     {
@@ -528,7 +533,7 @@ namespace UI
                         {
                             MessageBox.Show("Juego no se ha actualizado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
-                        correcto_subtipo = NotasModificar();
+                        correcto_subtipo = NotasModificar(id_contenido);
                     }
                     else
                     {
@@ -589,15 +594,8 @@ namespace UI
         }
 
         private void JuegoPreparativos()
-        {
-            if (modo == Modo.update)
-            {
-                lista_notas = NotaController.listar(id_contenido);
-            }
-            else
-            {
-                lista_notas = new List<Nota>();
-            }
+        {   
+            lista_notas = NotaController.listar(id_contenido);
             lista_notaTabla = new List<NotaTabla>();
             eliminados_notas = new List<Nota>();
 
@@ -609,7 +607,8 @@ namespace UI
                 lista_notaTabla.Add(nt);
             }
 
-            DataGrid_juego_tabla.ItemsSource = lista_notaTabla;   
+            DataGrid_juego_tabla.ItemsSource = lista_notaTabla;
+            ActualizarLista();
         }
 
         private void ActualizarLista()
@@ -660,15 +659,16 @@ namespace UI
             }
         }
 
-        private bool NotasModificar()
+        private bool NotasModificar(int id_contenido)
         {
             for (int i = 0; i < lista_notas.Count; i++)
             {
+                if (DataGrid_juego_tabla.Items.Count < i + 1) break;
                 NotaTabla nt = (NotaTabla) DataGrid_juego_tabla.Items[i];
                 Nota nota = lista_notas[i];
                 nota.Descripcion = nt.Descripcion;
                 nota.Completado = nt.Listo;
-                if (nota.Id_contenido == -1) nota.Id_contenido = id_contenido;
+                if (nota.Id_contenido < 0) nota.Id_contenido = id_contenido;
 
                 if (NotaController.exist(nota.Id_nota, nota.Id_contenido))
                 {

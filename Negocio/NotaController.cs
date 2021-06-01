@@ -13,7 +13,7 @@ namespace Negocio
         public static bool insert(Nota nota)
         {
             DataBase bd = new DataBase();
-            string nonquery = $"INSERT INTO nota (id_juego, descripcion, completado) VALUES ({nota.Id_contenido}, '{nota.Descripcion}', '{nota.Completado}')";
+            string nonquery = $"INSERT INTO nota (id_juego, descripcion, completado) VALUES ({nota.Id_contenido}, '{nota.Descripcion}', {(nota.Completado?1:0)})";
             bool respusta = bd.NonQuery(nonquery);
             return respusta;
         }
@@ -21,7 +21,7 @@ namespace Negocio
         public static bool update(Nota nota)
         {
             DataBase bd = new DataBase();
-            string nonquery = $"UPDATE nota SET descripcion = '{nota.Descripcion}', completado '{nota.Completado}' WHERE id_nota = {nota.Id_nota} and id_juego = {nota.Id_contenido}";
+            string nonquery = $"UPDATE nota SET descripcion = '{nota.Descripcion}', completado = {(nota.Completado?1:0)} WHERE id_nota = {nota.Id_nota} and id_juego = {nota.Id_contenido}";
             bool respusta = bd.NonQuery(nonquery);
             return respusta;
         }
@@ -48,7 +48,7 @@ namespace Negocio
             nota.Id_nota = int.Parse(select[0][0].ToString());
             nota.Id_contenido = int.Parse(select[0][1].ToString());
             nota.Descripcion = select[0][2].ToString();
-            nota.Completado = bool.Parse(select[0][3].ToString());
+            nota.Completado = select[0][3].ToString() == "1";
 
             return nota;
         }
