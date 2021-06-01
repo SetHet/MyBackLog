@@ -52,6 +52,7 @@ namespace UI
                 id_contenido = id_cont;
                 CargarDatosUpdate();
             }
+            JuegoPreparativos();
         }
 
         private void salir_editar_Click(object sender, RoutedEventArgs e)
@@ -533,5 +534,96 @@ namespace UI
             modificar.Show();
             this.Close();
         }
+
+        #region Juegos
+
+
+
+        public List<Nota> lista_notas;
+        public List<Nota> eliminados_notas;
+        public List<NotaTabla> lista_notaTabla;
+
+        public class NotaTabla
+        {
+            private string descripcion;
+            private bool completado;
+
+            public string Descripcion { get => descripcion; set => descripcion = value; }
+            public bool Listo { get => completado; set => completado = value; }
+        }
+
+        private void JuegoPreparativos()
+        {
+            if (modo == Modo.update)
+            {
+                lista_notas = NotaController.listar(id_contenido);
+            }
+            else
+            {
+                lista_notas = new List<Nota>();
+            }
+            lista_notaTabla = new List<NotaTabla>();
+            eliminados_notas = new List<Nota>();
+
+            foreach (var item in lista_notas)
+            {
+                NotaTabla nt = new NotaTabla();
+                nt.Descripcion = item.Descripcion;
+                nt.Listo = item.Completado;
+                lista_notaTabla.Add(nt);
+            }
+
+            DataGrid_juego_tabla.ItemsSource = lista_notaTabla;   
+        }
+
+        private void ActualizarLista()
+        {
+            DataGrid_juego_tabla.Items.Refresh();
+        }
+
+
+
+        
+        private void Btn_Add_Click(object sender, RoutedEventArgs e)
+        {
+            Nota nota = new Nota();
+            nota.Id_nota = -1;
+            nota.Id_contenido = -1;
+            nota.Descripcion = "";
+            nota.Completado = false;
+
+            NotaTabla nt = new NotaTabla();
+            nt.Descripcion = "";
+            nt.Listo = false;
+
+            lista_notas.Add(nota);
+            lista_notaTabla.Add(nt);
+
+            ActualizarLista();
+        }
+
+        private void Btn_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            int index = DataGrid_juego_tabla.SelectedIndex;
+            if (index < 0) return;
+
+            eliminados_notas.Add(lista_notas[index]);
+
+            lista_notaTabla.RemoveAt(index);
+            lista_notas.RemoveAt(index);
+
+            ActualizarLista();
+        }
+
+        private void tabla_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            DataGrid_juego_tabla.Columns[0].Width = new DataGridLength(0.8, DataGridLengthUnitType.Star);
+            DataGrid_juego_tabla.Columns[1].Width = new DataGridLength(0.2, DataGridLengthUnitType.Star);
+        }
+
+
+
+
+        #endregion
     }
 }

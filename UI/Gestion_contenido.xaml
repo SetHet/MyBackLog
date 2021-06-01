@@ -31,23 +31,19 @@
             <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="254"/>
             <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="254"/>
         </ComboBox>
-        
+
         <Grid Visibility="Collapsed" x:Name="pelicula_grid" HorizontalAlignment="Left" Height="332" Margin="421,164,0,0" VerticalAlignment="Top" Width="350">
             <Label Content="Agregar duracion (en minutos)" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
             <TextBox x:Name="Txt_Pelicula_Duracion" Foreground="White" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
             <Label Content="Minutos vistos" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
             <TextBox x:Name="Txt_Pelicula_Minuto" HorizontalAlignment="Left" Foreground="White" Height="23" Margin="10,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
         </Grid>
-        <Grid x:Name="grid_juego" Visibility="Collapsed" HorizontalAlignment="Left" Height="275" Margin="421,181,0,0" VerticalAlignment="Top" Width="330">
-            <Label Content="Agregar nota" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <TextBox x:Name="Txt_Juego_Nota" HorizontalAlignment="Left" Height="23" Margin="10,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
-            <Label Content="Editar descripcion" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <TextBox HorizontalAlignment="Left" Height="54" Margin="10,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="White"/>
-            <Label Content="¿Esta completado?" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <ComboBox HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top" Width="158">
-                <ComboBoxItem Content="Si" HorizontalAlignment="Left" Width="156"/>
-                <ComboBoxItem Content="No" HorizontalAlignment="Left" Width="156"/>
-            </ComboBox>
+        <Grid x:Name="grid_juego" Visibility="Collapsed" HorizontalAlignment="Left" Height="448" Margin="421,181,0,0" VerticalAlignment="Top" Width="341">
+            <DataGrid Name="DataGrid_juego_tabla" HorizontalAlignment="Left" Height="418" VerticalAlignment="Top" Width="331"
+                  CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" ColumnWidth="*" 
+                  SizeChanged="tabla_SizeChanged" CanUserResizeColumns="False"/>
+            <Button Name="Btn_juego_Add" Content="Add" HorizontalAlignment="Left" Margin="168,423,0,0" VerticalAlignment="Top" Width="74" Click="Btn_Add_Click"/>
+            <Button Name="Btn_juego_Delete" Content="Delete" HorizontalAlignment="Left" Margin="256,423,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Delete_Click"/>
         </Grid>
         <Grid x:Name="grid_serie" Visibility="Collapsed" HorizontalAlignment="Left" Height="387" Margin="421,190,0,0" VerticalAlignment="Top" Width="341">
             <Label Content="Tiempo de los capitulos (en minutos)" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,2,0,0" VerticalAlignment="Top"/>
