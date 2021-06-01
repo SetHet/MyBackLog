@@ -125,6 +125,7 @@ namespace UI
             //Cargar Contenido Serie
 
             //Cargar Contenido Juego
+            JuegoPreparativos();
         }
 
         private void subtipo_cbo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -246,7 +247,7 @@ namespace UI
                 #region Juego
                 if (subtipo_cbo.SelectedIndex == 3)
                 {
-                    MessageBox.Show("Aun no se puede juego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    juego = new Juego();
                     return;
                 }
                 #endregion
@@ -306,8 +307,15 @@ namespace UI
                 if (juego != null)
                 {
                     juego.Id_contenido = id_contenido;
-
-                    MessageBox.Show("Aun no esta juego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (correcto_subtipo = JuegoController.insert(juego))
+                    {
+                        MessageBox.Show("Ingresado correctamente Juego");
+                        correcto_subtipo = NotasModificar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Juego no se ha ingresado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
 
                 if (!correcto_subtipo)
@@ -413,8 +421,7 @@ namespace UI
                 #region Juego
                 if (subtipo_cbo.SelectedIndex == 3)
                 {
-                    MessageBox.Show("Aun no se puede juego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
+                    juego = new Juego();
                 }
                 #endregion
 
@@ -436,6 +443,7 @@ namespace UI
                 if (libro != null)
                 {
                     PeliculaController.deletePelicula(id_contenido);
+                    JuegoController.delete(id_contenido);
                     MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en libro");
 
                     libro.Id_contenido = id_contenido;
@@ -466,6 +474,7 @@ namespace UI
                 if (pelicula != null)
                 {
                     LibroController.deleteLibro(id_contenido);
+                    JuegoController.delete(id_contenido);
                     MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en pelicula");
 
                     pelicula.Id_contenido = id_contenido;
@@ -504,9 +513,34 @@ namespace UI
                 //Juego
                 if (juego != null)
                 {
-                    juego.Id_contenido = id_contenido;
+                    LibroController.deleteLibro(id_contenido);
+                    PeliculaController.deletePelicula(id_contenido);
+                    MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en juego");
 
-                    MessageBox.Show("Aun no esta juego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    juego.Id_contenido = id_contenido;
+                    if (JuegoController.exist(id_contenido))
+                    {
+                        if (correcto_subtipo = JuegoController.update(id_contenido))
+                        {
+                            MessageBox.Show("Actualizado correctamente Juego");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Juego no se ha actualizado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        correcto_subtipo = NotasModificar();
+                    }
+                    else
+                    {
+                        if (correcto_subtipo = JuegoController.insert(juego))
+                        {
+                            MessageBox.Show("Ingresado correctamente Juego");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Juego no se ha ingresado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
                 }
 
                 if (!correcto_subtipo)
@@ -527,6 +561,8 @@ namespace UI
 
             CerrarVentana();
         }
+
+        
 
         public void CerrarVentana()
         {
@@ -617,13 +653,71 @@ namespace UI
 
         private void tabla_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            DataGrid_juego_tabla.Columns[0].Width = new DataGridLength(0.8, DataGridLengthUnitType.Star);
-            DataGrid_juego_tabla.Columns[1].Width = new DataGridLength(0.2, DataGridLengthUnitType.Star);
+            if (DataGrid_juego_tabla.Columns.Count >= 2)
+            {
+                DataGrid_juego_tabla.Columns[0].Width = new DataGridLength(0.8, DataGridLengthUnitType.Star);
+                DataGrid_juego_tabla.Columns[1].Width = new DataGridLength(0.2, DataGridLengthUnitType.Star);
+            }
         }
 
+        private bool NotasModificar()
+        {
+            for (int i = 0; i < lista_notas.Count; i++)
+            {
+                NotaTabla nt = (NotaTabla) DataGrid_juego_tabla.Items[i];
+                Nota nota = lista_notas[i];
+                nota.Descripcion = nt.Descripcion;
+                nota.Completado = nt.Listo;
+                if (nota.Id_contenido == -1) nota.Id_contenido = id_contenido;
 
+                if (NotaController.exist(nota.Id_nota, nota.Id_contenido))
+                {
+                    //existe nota
+                    if (nota.Descripcion != "")
+                    {
+                        if (NotaController.update(nota) == false)
+                        {
+                            MessageBox.Show("Update nota a fallado", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        if (NotaController.delete(nota.Id_nota, nota.Id_contenido) == false)
+                        {
+                            MessageBox.Show("Delete nota a fallado", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            return false;
+                        }
+                    }
+                }
+                else
+                {
+                    //no existe nota
+                    if (nota.Descripcion != "")
+                    {
+                        if (NotaController.insert(nota) == false)
+                        {
+                            MessageBox.Show("Insert nota a fallado", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            return false;
+                        }
+                    }
+                }
+            }
 
+            foreach (var nota in eliminados_notas)
+            {
+                if (NotaController.exist(nota.Id_nota, nota.Id_contenido))
+                {
+                    if (NotaController.delete(nota.Id_nota, nota.Id_contenido) == false)
+                    {
+                        MessageBox.Show("Delete nota a fallado", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return false;
+                    }
+                }
+            }
 
+            return true;
+        }
         #endregion
     }
 }

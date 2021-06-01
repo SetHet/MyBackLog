@@ -13,7 +13,7 @@ namespace Negocio
         public static bool insert(Nota nota)
         {
             DataBase bd = new DataBase();
-            string nonquery = $"INSERT INTO nota (id_nota, id_juego, descripcion, completado) VALUES ({nota.Id_nota}, {nota.Id_contenido}, '{nota.Descripcion}', '{nota.Completado}')";
+            string nonquery = $"INSERT INTO nota (id_juego, descripcion, completado) VALUES ({nota.Id_contenido}, '{nota.Descripcion}', '{nota.Completado}')";
             bool respusta = bd.NonQuery(nonquery);
             return respusta;
         }

@@ -74,5 +74,10 @@ namespace Negocio
         {
             return get(id) != null;
         }
+
+        public static bool update(int id_contenido)
+        {
+            return true;
+        }
     }
 }
