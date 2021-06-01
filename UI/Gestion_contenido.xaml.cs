@@ -45,6 +45,7 @@ namespace UI
             InitializeComponent();
             
             CargarComboBox();
+            
             if (id_cont > -1) //Update?
             {
                 //Configurar Update
@@ -52,7 +53,13 @@ namespace UI
                 id_contenido = id_cont;
                 CargarDatosUpdate();
             }
+
             JuegoPreparativos();
+            
+            if (modo == Modo.create)
+                Titulo.Content = "Crear Nuevo Contenido";
+            if (modo == Modo.update)
+                Titulo.Content = "Actualizar Contenido";
         }
 
         private void salir_editar_Click(object sender, RoutedEventArgs e)
