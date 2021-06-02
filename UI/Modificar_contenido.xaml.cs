@@ -20,6 +20,7 @@ namespace UI
     public partial class Modificar_contenido : Window
     {
         private List<Datos.Contenido> Contenidos;
+       
 
         public Modificar_contenido()
         {
@@ -79,6 +80,12 @@ namespace UI
             Gestion_contenido editar = new Gestion_contenido(Contenidos[select].Id_contenido);
             editar.Show();
             this.Close();
+        }
+
+        private void plat_Selected(object sender, RoutedEventArgs e)
+        {
+            Agregar_plataforma add = new Agregar_plataforma();
+            add.Show();
         }
     }
 }

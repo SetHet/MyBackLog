@@ -21,6 +21,7 @@ namespace UI
     /// </summary>
     public partial class Gestion_contenido : Window
     {
+
         #region Variables
         public int id_contenido = -1;
         public Modo modo = Modo.create;

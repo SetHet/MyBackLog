@@ -51,6 +51,12 @@
                     </ListView>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem Height="58" x:Name="plat" Selected="plat_Selected">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="TelevisionBox" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <TextBlock Text="Plataformas" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
                     <ListViewItem Height="58">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Movie" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
