@@ -130,7 +130,20 @@ namespace UI
                 subtipo_cbo.SelectedIndex = 1;
             }
 
+
+
             //Cargar Contenido Serie
+            serie = SerieController.getSerie(contenido.Id_contenido);
+            if (serie != null)
+            {
+                
+                Txt_Tiempo_Capitulos.Text = serie.Tiempo_capitulo.ToString();
+                Txt_Capitulos_Temporada.Text = serie.Capitulos_temporada.ToString();
+                Txt_Temporada.Text = serie.Temporada.ToString();
+                Txt_Capitulo.Text = serie.Capitulo.ToString();
+                Txt_MinutoSerie.Text = serie.Minuto.ToString();
+                subtipo_cbo.SelectedIndex = 2;
+            }
 
             //Cargar Contenido Juego
             juego = JuegoController.get(contenido.Id_contenido);
@@ -252,8 +265,7 @@ namespace UI
                 #region Serie
                 if (subtipo_cbo.SelectedIndex == 2)
                 {
-                    MessageBox.Show("Aun no se puede serie", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
+                    serie = new Serie();
                 }
                 #endregion
 
@@ -312,8 +324,15 @@ namespace UI
                 if (serie != null)
                 {
                     serie.Id_contenido = id_contenido;
-
-                    MessageBox.Show("Aun no esta pelicula", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (correcto_subtipo = SerieController.insertSerie(serie))
+                    {
+                        MessageBox.Show("Serie ingresada correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Serie no se ha ingresado correctamente","Error", MessageBoxButton.OK,MessageBoxImage.Error);
+                    }
+                  
                 }
 
                 //Juego
@@ -424,10 +443,14 @@ namespace UI
                 #endregion
 
                 #region Serie
-                if (subtipo_cbo.SelectedIndex == 2)
+                if (subtipo_cbo.SelectedIndex == 2)   
                 {
-                    MessageBox.Show("Aun no se puede serie", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
+                    serie = new Serie();
+                    serie.Tiempo_capitulo = int.Parse(Txt_Tiempo_Capitulos.Text);
+                    serie.Capitulos_temporada = int.Parse(Txt_Capitulos_Temporada.Text);
+                    serie.Temporada = int.Parse(Txt_Temporada.Text);
+                    serie.Capitulo = int.Parse(Txt_Capitulo.Text);
+                    serie.Minuto = int.Parse(Txt_MinutoSerie.Text);
                 }
                 #endregion
 
@@ -518,9 +541,34 @@ namespace UI
                 //Serie
                 if (serie != null)
                 {
-                    serie.Id_contenido = id_contenido;
+                    LibroController.deleteLibro(id_contenido);
+                    JuegoController.delete(id_contenido);
+                    PeliculaController.deletePelicula(id_contenido);
+                    MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en serie");
 
-                    MessageBox.Show("Aun no esta pelicula", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    serie.Id_contenido = id_contenido;
+                    if (SerieController.existSerie(id_contenido))
+                    {
+                        if (correcto_subtipo = SerieController.updateSerie(serie))
+                        {
+                            MessageBox.Show("Actualizado correctamente Serie");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Serie no se ha actualizado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (correcto_subtipo = SerieController.insertSerie(serie))
+                        {
+                            MessageBox.Show("Ingresado correctamente Serie");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Serie no se ha ingresado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
                 }
 
                 //Juego
