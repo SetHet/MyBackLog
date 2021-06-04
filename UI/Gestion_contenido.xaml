@@ -47,15 +47,15 @@
         </Grid>
         <Grid x:Name="grid_serie" Visibility="Collapsed" HorizontalAlignment="Left" Height="387" Margin="421,190,0,0" VerticalAlignment="Top" Width="341">
             <Label Content="Tiempo de los capitulos (en minutos)" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,2,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
+            <TextBox x:Name="Txt_Tiempo_Capitulos" HorizontalAlignment="Left" Height="23" Margin="7,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
             <Label Content="Agregar capitulos temporadas" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,78,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
+            <TextBox x:Name="Txt_Capitulos_Temporada" HorizontalAlignment="Left" Height="23" Margin="7,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
             <Label Content="Agregar temporada actual" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,153,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
+            <TextBox x:Name="Txt_Temporada" HorizontalAlignment="Left" Height="23" Margin="7,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
             <Label Content="Agregar capitulo actual" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,231,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,272,0,-20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
+            <TextBox x:Name="Txt_Capitulo" HorizontalAlignment="Left" Height="23" Margin="7,272,0,-20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
             <Label Content="Agregar minuto actual" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,300,0,-59" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,339,0,-87" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
+            <TextBox x:Name="Txt_MinutoSerie" HorizontalAlignment="Left" Height="23" Margin="7,339,0,-87" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White"/>
         </Grid>
         <Grid x:Name="grid_libro" Visibility="Collapsed" HorizontalAlignment="Left" Height="262" Margin="420,167,0,0" VerticalAlignment="Top" Width="351">
             <Label Content="Agregar cantidad de paginas" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.424,-0.745"/>

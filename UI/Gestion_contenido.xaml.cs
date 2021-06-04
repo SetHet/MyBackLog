@@ -132,6 +132,18 @@ namespace UI
 
             //Cargar Contenido Serie
 
+            serie = SerieController.getSerie(contenido.Id_contenido);
+            if (serie != null)
+            {
+
+                Txt_Tiempo_Capitulos.Text = serie.Tiempo_capitulo.ToString();
+                Txt_Capitulos_Temporada.Text = serie.Capitulos_temporada.ToString();
+                Txt_Temporada.Text = serie.Temporada.ToString();
+                Txt_Capitulo.Text = serie.Capitulo.ToString();
+                Txt_MinutoSerie.Text = serie.Minuto.ToString();
+                subtipo_cbo.SelectedIndex = 2;
+            }
+
             //Cargar Contenido Juego
             juego = JuegoController.get(contenido.Id_contenido);
             if (juego != null)
@@ -252,8 +264,12 @@ namespace UI
                 #region Serie
                 if (subtipo_cbo.SelectedIndex == 2)
                 {
-                    MessageBox.Show("Aun no se puede serie", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
+                    serie = new Serie();
+                    serie.Tiempo_capitulo = int.Parse(Txt_Tiempo_Capitulos.Text);
+                    serie.Capitulos_temporada = int.Parse(Txt_Capitulos_Temporada.Text);
+                    serie.Temporada = int.Parse(Txt_Temporada.Text);
+                    serie.Capitulo = int.Parse(Txt_Capitulo.Text);
+                    serie.Minuto = int.Parse(Txt_MinutoSerie.Text);
                 }
                 #endregion
 
@@ -279,6 +295,8 @@ namespace UI
                 int id_contenido = ContenidoController.LastID();
 
                 bool correcto_subtipo = false;
+    
+                
 
                 //Libro
                 if (libro != null)
@@ -312,8 +330,16 @@ namespace UI
                 if (serie != null)
                 {
                     serie.Id_contenido = id_contenido;
+                    if (correcto_subtipo = SerieController.insertSerie(serie))
+                    {
+                        MessageBox.Show("Serie ingresada correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Serie no se ha ingresado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
 
-                    MessageBox.Show("Aun no esta pelicula", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    
                 }
 
                 //Juego
@@ -404,6 +430,7 @@ namespace UI
                 pelicula = null;
                 serie = null;
                 juego = null;
+                bool correcto_subtipo = false;
 
                 #region Libro
                 if (subtipo_cbo.SelectedIndex == 0)
@@ -422,12 +449,16 @@ namespace UI
                     pelicula.Minuto = int.Parse(Txt_Pelicula_Minuto.Text);
                 }
                 #endregion
-
+                
                 #region Serie
                 if (subtipo_cbo.SelectedIndex == 2)
                 {
-                    MessageBox.Show("Aun no se puede serie", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
+                    serie = new Serie();
+                    serie.Tiempo_capitulo = int.Parse(Txt_Tiempo_Capitulos.Text);
+                    serie.Capitulos_temporada = int.Parse(Txt_Capitulos_Temporada.Text);
+                    serie.Temporada = int.Parse(Txt_Temporada.Text);
+                    serie.Capitulo = int.Parse(Txt_Capitulo.Text);
+                    serie.Minuto = int.Parse(Txt_MinutoSerie.Text);
                 }
                 #endregion
 
@@ -450,13 +481,14 @@ namespace UI
                 }
 
 
-                bool correcto_subtipo = false;
+                
 
                 //Libro
                 if (libro != null)
                 {
                     PeliculaController.deletePelicula(id_contenido);
                     JuegoController.delete(id_contenido);
+                    SerieController.deleteSerie(id_contenido);
                     MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en libro");
 
                     libro.Id_contenido = id_contenido;
@@ -488,6 +520,7 @@ namespace UI
                 {
                     LibroController.deleteLibro(id_contenido);
                     JuegoController.delete(id_contenido);
+                    SerieController.deleteSerie(id_contenido);
                     MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en pelicula");
 
                     pelicula.Id_contenido = id_contenido;
@@ -518,9 +551,35 @@ namespace UI
                 //Serie
                 if (serie != null)
                 {
+                    
+                    LibroController.deleteLibro(id_contenido);
+                    JuegoController.delete(id_contenido);
+                    PeliculaController.deletePelicula(id_contenido);
+                    MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en serie");
                     serie.Id_contenido = id_contenido;
 
-                    MessageBox.Show("Aun no esta pelicula", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (SerieController.existSerie(id_contenido))
+                    {
+                        if (correcto_subtipo = SerieController.updateSerie(serie))
+                        {
+                            MessageBox.Show("Actualizado correctamente Serie");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Serie no se ha actualizado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (correcto_subtipo = SerieController.insertSerie(serie))
+                        {
+                            MessageBox.Show("Ingresado correctamente Serie");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Serie no se ha ingresado correctamente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
                 }
 
                 //Juego
@@ -528,6 +587,7 @@ namespace UI
                 {
                     LibroController.deleteLibro(id_contenido);
                     PeliculaController.deletePelicula(id_contenido);
+                    SerieController.deleteSerie(id_contenido);
                     MessageBox.Show("Recordatorio: Falta eliminacion de tipo al cambiar tipo en juego");
 
                     juego.Id_contenido = id_contenido;
