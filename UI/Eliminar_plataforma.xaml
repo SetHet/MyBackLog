@@ -9,7 +9,7 @@
     <Grid Background="#FF4C1130">
         <Label Content="Eliminar plataforma" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Ingrese codigo de plataforma" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="codigo_delete" HorizontalAlignment="Left" Height="24" Margin="10,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Foreground="White"/>
+        <TextBox x:Name="codigo_delete" HorizontalAlignment="Left" Height="24" Margin="10,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Foreground="black" Background="White" />
         <Button x:Name="eliminar_plataforma" Content="Eliminar" HorizontalAlignment="Left" Margin="55,245,0,0" VerticalAlignment="Top" Width="83" Height="42" Background="#FF666666"/>
         <Button x:Name="cancelar_eliminar" Content="Cancelar" HorizontalAlignment="Left" Margin="171,245,0,0" VerticalAlignment="Top" Width="83" Height="42" Background="#FF666666" Click="cancelar_eliminar_Click"/>
 

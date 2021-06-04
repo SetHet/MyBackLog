@@ -102,51 +102,11 @@
     <Compile Include="TestPage.xaml.cs">
       <DependentUpon>TestPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Agregar_contenido.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Agregar_juego.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Agregar_libro.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Agregar_pelicula.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Agregar_plataforma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Agregar_serie.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Editar_contenido.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Editar_juego.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Editar_libro.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Editar_pelicula.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Editar_plataforma.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Editar_serie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,45 +118,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Agregar_contenido.xaml.cs">
-      <DependentUpon>Agregar_contenido.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Agregar_juego.xaml.cs">
-      <DependentUpon>Agregar_juego.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Agregar_libro.xaml.cs">
-      <DependentUpon>Agregar_libro.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Agregar_pelicula.xaml.cs">
-      <DependentUpon>Agregar_pelicula.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Agregar_plataforma.xaml.cs">
       <DependentUpon>Agregar_plataforma.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Agregar_serie.xaml.cs">
-      <DependentUpon>Agregar_serie.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Editar_contenido.xaml.cs">
-      <DependentUpon>Editar_contenido.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Editar_juego.xaml.cs">
-      <DependentUpon>Editar_juego.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Editar_libro.xaml.cs">
-      <DependentUpon>Editar_libro.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Editar_pelicula.xaml.cs">
-      <DependentUpon>Editar_pelicula.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Editar_plataforma.xaml.cs">
       <DependentUpon>Editar_plataforma.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Editar_serie.xaml.cs">
-      <DependentUpon>Editar_serie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Eliminar_plataforma.xaml.cs">
       <DependentUpon>Eliminar_plataforma.xaml</DependentUpon>

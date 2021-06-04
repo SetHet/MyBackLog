@@ -84,8 +84,9 @@ namespace UI
 
         private void plat_Selected(object sender, RoutedEventArgs e)
         {
-            Agregar_plataforma add = new Agregar_plataforma();
-            add.Show();
+            Gestionar_plataforma gestionar = new Gestionar_plataforma();
+            gestionar.Show();
+            this.Close();
         }
     }
 }

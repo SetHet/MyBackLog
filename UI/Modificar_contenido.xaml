@@ -21,12 +21,7 @@
         <Grid x:Name="GridMenu" Width="180" HorizontalAlignment="Left" Background="#FF666666">
             <StackPanel>
                 <Grid Height="58" HorizontalAlignment="Left">
-                    <Button x:Name="ButtonCloseMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}">
-                        <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25" />
-                    </Button>
-                    <Button x:Name="ButtonOpenMenu" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" BorderBrush="{x:Null}" >
-                        <materialDesign:PackIcon Foreground="#FF4C1130" Kind="Menu" Width="25" Height="25"/>
-                    </Button>
+                    
                 </Grid>
                 <Grid Height="182">
                     <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
@@ -90,14 +85,14 @@
         <Label Content="Filtrar por tipo" Foreground="White" HorizontalAlignment="Left" Margin="201,89,0,0" VerticalAlignment="Top"/>
         <Label Content="Filtrar por calificacion" Foreground="White" HorizontalAlignment="Left" Margin="360,89,0,0" VerticalAlignment="Top"/>
         <Label Content="Filtrar por plataforma" Foreground="White" HorizontalAlignment="Left" Margin="541,89,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="201,127,0,0" VerticalAlignment="Top" Width="128">
+        <ComboBox Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="201,127,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="Pelicula" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="126"/>
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="536,127,0,0" VerticalAlignment="Top" Width="128"/>
-        <ComboBox HorizontalAlignment="Left" Margin="360,127,0,0" VerticalAlignment="Top" Width="128">
+        <ComboBox Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="536,127,0,0" VerticalAlignment="Top" Width="128"/>
+        <ComboBox Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="360,127,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="1 estrella" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="2 estrellas" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="3 estrellas" HorizontalAlignment="Left" Width="126"/>

@@ -76,6 +76,13 @@ namespace UI
 
             Listar();
         }
+
+        private void contenido_Selected(object sender, RoutedEventArgs e)
+        {
+            Modificar_contenido modificar = new Modificar_contenido();
+            modificar.Show();
+            this.Close();
+        }
     }
 
 }
