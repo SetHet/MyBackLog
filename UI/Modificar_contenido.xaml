@@ -14,6 +14,8 @@
                 <DataGridTextColumn Header="Id Contenido" Binding="{Binding Path=Id_contenido}"/>
                 <DataGridTextColumn Header="Titulo" Binding="{Binding Path=Titulo}"/>
                 <DataGridTextColumn Header="Horas de Inversion" Binding="{Binding Path=Horas_inversion}"/>
+                <DataGridTextColumn Header="Calificación" Binding="{Binding Path=Calificacion}"/>
+                <DataGridTextColumn Header="Plataforma" Binding="{Binding Path=Id_plataforma}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Modificar contenido" HorizontalAlignment="Left" Margin="330,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
@@ -85,20 +87,24 @@
         <Label Content="Filtrar por tipo" Foreground="White" HorizontalAlignment="Left" Margin="201,89,0,0" VerticalAlignment="Top"/>
         <Label Content="Filtrar por calificacion" Foreground="White" HorizontalAlignment="Left" Margin="360,89,0,0" VerticalAlignment="Top"/>
         <Label Content="Filtrar por plataforma" Foreground="White" HorizontalAlignment="Left" Margin="541,89,0,0" VerticalAlignment="Top"/>
-        <ComboBox Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="201,127,0,0" VerticalAlignment="Top" Width="128">
+        <ComboBox x:Name="cboCatFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="201,127,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem Content="Sin Filtro" HorizontalAlignment="Left" Width="126" IsSelected="True"/>
             <ComboBoxItem Content="Pelicula" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="126"/>
         </ComboBox>
-        <ComboBox Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="536,127,0,0" VerticalAlignment="Top" Width="128"/>
-        <ComboBox Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="360,127,0,0" VerticalAlignment="Top" Width="128">
+        <ComboBox x:Name="cboPlatFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="536,127,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem  Content="Sin Filtro" HorizontalAlignment="Left" Width="126" IsSelected="True"/>
+        </ComboBox>
+        <ComboBox x:Name="cboEstFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="360,127,0,0" VerticalAlignment="Top" Width="128">
+            <ComboBoxItem  Content="Sin Filtro" HorizontalAlignment="Left" Width="126" IsSelected="True"/>
             <ComboBoxItem Content="1 estrella" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="2 estrellas" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="3 estrellas" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="4 estrellas" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="5 estrellas" HorizontalAlignment="Left" Width="126"/>
         </ComboBox>
-        <Button x:Name="filtrado" Content="Agregar filtros" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Width="175" Height="27" Background="#FF666666" Click="agregar_contenido_Click"/>
+        <Button x:Name="filtrado" Content="Agregar filtros" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Width="175" Height="27" Background="#FF666666" Click="filtrado_Click"/>
     </Grid>
 </Window>

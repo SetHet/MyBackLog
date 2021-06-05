@@ -124,5 +124,37 @@ namespace Negocio
             
             return int.Parse(row[0].ToString());
         }
+        public static List<Contenido> Filtro(string where, string tabla = null)
+        {
+            List<Contenido> listaFiltrada = new List<Contenido>();
+            DataBase db = new DataBase();
+            string query;
+            if (tabla != null)
+            {
+                query = $"select id_contenido, titulo, descripcion, calificacion, horas_inversion, id_plataforma, id_progresion, id_adquisicion from contenido join {tabla} using(id_contenido) " + where;
+            }
+            else
+            {
+                query = $"select id_contenido, titulo, descripcion, calificacion, horas_inversion, id_plataforma, id_progresion, id_adquisicion from contenido {where}";
+            }
+            List<object[]> lista_codificada = db.Select(query);
+            if (lista_codificada != null)
+                foreach (var row in lista_codificada)
+                {
+                    Contenido contenido = new Contenido
+                    {
+                        Id_contenido = int.Parse(row[0].ToString()),
+                        Titulo = (string)row[1],
+                        Descripcion = (string)row[2],
+                        Calificacion = int.Parse(row[3].ToString()),
+                        Horas_inversion = int.Parse(row[4].ToString()),
+                        Id_plataforma = int.Parse(row[5].ToString()),
+                        Id_progresion = int.Parse(row[6].ToString()),
+                        Id_adquisicion = int.Parse(row[7].ToString())
+                    };
+                    listaFiltrada.Add(contenido);
+                }
+            return listaFiltrada;
+        }
     }
 }
