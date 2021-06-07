@@ -55,25 +55,25 @@
                         </StackPanel>
                     </ListViewItem>
 
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Name="Nav_Peliculas" MouseDoubleClick="Nav_Peliculas_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Foreground="Black" Kind="Movie" Width="25" Height="35" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Peliculas" Foreground="White" Width="50" Height="25" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Name="Nav_Serie" MouseDoubleClick="Nav_Serie_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Kind="Play" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Series" Foreground="White" Width="37" Height="25" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Name="Nav_Juego" MouseDoubleClick="Nav_Juego_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Kind="GamepadClassic" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Juegos" Foreground="White" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58">
+                    <ListViewItem Height="58" Name="Nav_Libro" MouseDoubleClick="Nav_Libro_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Kind="BookOpenPageVariant" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Libros" Foreground="White" VerticalAlignment="Center"/>

@@ -222,5 +222,29 @@ namespace UI
             filtroB = "Pendientes";
             Llenar();
         }
+
+        private void Nav_Peliculas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "";
+            Filtrado(0, 0, "Pelicula");
+        }
+
+        private void Nav_Serie_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "";
+            Filtrado(0, 0, "Serie");
+        }
+
+        private void Nav_Juego_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "";
+            Filtrado(0, 0, "Juego");
+        }
+
+        private void Nav_Libro_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "";
+            Filtrado(0, 0, "Libro");
+        }
     }
 }
