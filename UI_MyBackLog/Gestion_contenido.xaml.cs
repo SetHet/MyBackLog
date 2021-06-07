@@ -105,7 +105,10 @@ namespace UI
 
             Txt_Titulo.Text = contenido.Titulo;
             Txt_Descripcion.Text = contenido.Descripcion;
-            Txt_Calificacion.Text = contenido.Calificacion.ToString();
+            int index_calificacion = contenido.Calificacion;
+            if (index_calificacion > 5) index_calificacion = 5;
+            else if (index_calificacion < 1) index_calificacion = 1;
+            ComboBox_Calificacion.SelectedIndex = (index_calificacion - 1);
             Txt_Horas_Inversion.Text = contenido.Horas_inversion.ToString();
             ComboBox_Plataforma.SelectedIndex = lista_plataformas.FindIndex(x => x.Id_plataforma == contenido.Id_plataforma);
             ComboBox_Progresion.SelectedIndex = lista_progresion.FindIndex(x => x.Id_progresion == contenido.Id_progresion);
@@ -196,7 +199,7 @@ namespace UI
                 #region TextBox
                 contenido.Titulo = Txt_Titulo.Text;
                 contenido.Descripcion = Txt_Descripcion.Text;
-                contenido.Calificacion = int.Parse(Txt_Calificacion.Text);
+                contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
                 #endregion
 
@@ -384,7 +387,7 @@ namespace UI
                 contenido.Id_contenido = id_contenido;
                 contenido.Titulo = Txt_Titulo.Text;
                 contenido.Descripcion = Txt_Descripcion.Text;
-                contenido.Calificacion = int.Parse(Txt_Calificacion.Text);
+                contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
                 #endregion
 

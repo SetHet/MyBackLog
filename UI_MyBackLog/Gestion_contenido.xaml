@@ -9,13 +9,22 @@
     <Grid Background="#FF4C1130">
         <Label Name="Titulo" Content="Agregar o editar contenido" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Titulo" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox x:Name="Txt_Titulo" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="10,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="Txt_Descripcion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="59" Margin="10,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="Txt_Titulo" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="10,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260"/>
+        <TextBox x:Name="Txt_Descripcion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="59" Margin="10,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260"/>
         <Label Content="Descripcion" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <Label Content="Calificacion" HorizontalAlignment="Left" Margin="13,256,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox x:Name="Txt_Calificacion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="13,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <!--<TextBox x:Name="Txt_Calificacion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="13,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>-->
+        <ComboBox Name="ComboBox_Calificacion" HorizontalAlignment="Left" Margin="13,295,0,0" VerticalAlignment="Top" Width="256">
+            <ComboBoxItem Content="1 Estrella" HorizontalAlignment="Left" Width="254"/>
+            <ComboBoxItem Content="2 Estrella" HorizontalAlignment="Left" Width="254"/>
+            <ComboBoxItem Content="3 Estrella" HorizontalAlignment="Left" Width="254"/>
+            <ComboBoxItem Content="4 Estrella" HorizontalAlignment="Left" Width="254"/>
+            <ComboBoxItem Content="5 Estrella" HorizontalAlignment="Left" Width="254"/>
+        </ComboBox>
+
         <Label Content="Editar horas inversion" HorizontalAlignment="Left" Margin="13,328,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox x:Name="Txt_Horas_Inversion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="13,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="Txt_Horas_Inversion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="13,367,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="Hrs." HorizontalAlignment="Left" Margin="94,362,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Height="28"/>
         <Label Content="Plataforma" HorizontalAlignment="Left" Margin="14,395,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <ComboBox Foreground="Black" Background="White" x:Name="ComboBox_Plataforma" HorizontalAlignment="Left" Margin="14,434,0,0" VerticalAlignment="Top" Width="256"/>
         <Label Content="Progresion" HorizontalAlignment="Left" Margin="14,473,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
