@@ -83,6 +83,11 @@ namespace UI
             modificar.Show();
             this.Close();
         }
+
+        private void Nav_QueEstoyViendo_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show("Click");
+        }
     }
 
 }

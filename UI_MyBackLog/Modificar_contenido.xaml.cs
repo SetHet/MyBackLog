@@ -21,8 +21,9 @@ namespace UI
     /// </summary>
     public partial class Modificar_contenido : Window
     {
-        private List<Contenido> Contenidos;
+        private List<Contenido> contenidos;
         public List<Plataforma> lista_plataformas;
+        public string filtroB = "";
 
 
         public Modificar_contenido()
@@ -35,10 +36,46 @@ namespace UI
         private void Llenar()
         {
             info.Items.Clear();
-            Contenidos = Negocio.ContenidoController.listarContenido();
-            if (Contenidos !=null)
+            contenidos = Negocio.ContenidoController.listarContenido();
+
+            //Filtros B
+            if (filtroB == "Viendo")
             {
-                foreach (var item in Contenidos)
+                List<Contenido> cont2 = new List<Contenido>();
+                foreach (var cont in contenidos)
+                {
+                    if (cont.Id_progresion == 2)
+                    {
+                        cont2.Add(cont);
+                    }
+                }
+                contenidos = cont2;
+            }
+            else if (filtroB == "Pendientes")
+            {
+                List<Contenido> cont2 = new List<Contenido>();
+                foreach (var cont in contenidos)
+                {
+                    if (cont.Id_progresion == 0)
+                    {
+                        cont2.Add(cont);
+                    }
+                }
+                contenidos = cont2;
+            }
+            else if (filtroB == "Sugerencias")
+            {
+                contenidos.Sort((b, a) => ((a.Calificacion / (float)a.Horas_inversion).CompareTo(b.Calificacion / (float)b.Horas_inversion)));
+            }
+            
+
+
+            //
+
+
+            if (contenidos !=null)
+            {
+                foreach (var item in contenidos)
                 {
                     info.Items.Add(item);
                 }
@@ -72,7 +109,7 @@ namespace UI
             }
             else
             {
-                if (Negocio.ContenidoController.deleteContenido(Contenidos[select].Id_contenido))
+                if (Negocio.ContenidoController.deleteContenido(contenidos[select].Id_contenido))
                 {
                     Console.WriteLine("Eliminar");
                 }
@@ -90,7 +127,7 @@ namespace UI
                 return;
             }
             
-            Gestion_contenido editar = new Gestion_contenido(Contenidos[select].Id_contenido);
+            Gestion_contenido editar = new Gestion_contenido(contenidos[select].Id_contenido);
             editar.Show();
             this.Close();
         }
@@ -126,7 +163,7 @@ namespace UI
             if (id_plataforma != 0 || id_calificacion != 0 || tabla != null)
             {
                 info.Items.Clear();
-                Contenidos = null;
+                contenidos = null;
                 Console.WriteLine(id_plataforma);
                 Console.WriteLine(id_calificacion);
                 Console.WriteLine(tabla);
@@ -145,16 +182,16 @@ namespace UI
                 }
                 if (tabla != "") 
                 {
-                    Contenidos = ContenidoController.Filtro(where, tabla);
+                    contenidos = ContenidoController.Filtro(where, tabla);
                 }
                 else
                 {
-                    Contenidos = ContenidoController.Filtro(where);
+                    contenidos = ContenidoController.Filtro(where);
 
                 }
-                if (Contenidos != null)
+                if (contenidos != null)
                 {
-                    foreach (var item in Contenidos)
+                    foreach (var item in contenidos)
                     {
                         info.Items.Add(item);
                     }
@@ -162,8 +199,28 @@ namespace UI
             }
             else
             {
+                filtroB = "";
                 Llenar();
             }
+        }
+
+       
+        private void Nav_QueEstoyViendo_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "Viendo";
+            Llenar();
+        }
+
+        private void Nav_Sugerencias_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "Sugerencias";
+            Llenar();
+        }
+
+        private void Nav_Pendiente_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "Pendientes";
+            Llenar();
         }
     }
 }

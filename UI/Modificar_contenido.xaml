@@ -27,7 +27,7 @@
                 </Grid>
                 <Grid Height="182">
                     <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
-                        <ListViewItem Height="58" Name="QueEstasViendo" MouseDown="QueEstasViendo_MouseDown">
+                        <ListViewItem Height="58" Name="QueEstasViendo">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Eye" Foreground="SkyBlue" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
                                 <TextBlock Text="¿Que estoy viendo?" Foreground="White" VerticalAlignment="Center"/>
