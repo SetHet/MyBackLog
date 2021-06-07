@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
         Title="MyBackLog" Height="569.333" Width="892" WindowStartupLocation="CenterScreen" >
@@ -29,19 +29,19 @@
                     <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
                         <ListViewItem Height="58" Name="QueEstasViendo" MouseDown="QueEstasViendo_MouseDown">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Eye" Foreground="SkyBlue" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <!--<materialDesign:PackIcon Kind="Eye" Foreground="SkyBlue" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>-->
                                 <TextBlock Text="¿Que estoy viendo?" Foreground="White" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="58">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Lightbulb" Foreground="Yellow" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <!--<materialDesign:PackIcon Kind="Lightbulb" Foreground="Yellow" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                                 <TextBlock Text="Sugerencias" Foreground="White" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
                         <ListViewItem Height="58">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Clock" Foreground="#FF932C2C" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                                <!--<materialDesign:PackIcon Kind="Clock" Foreground="#FF932C2C" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                                 <TextBlock Text="Pendiente" Foreground="White" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
@@ -50,31 +50,31 @@
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListViewItem Height="58" x:Name="plat" Selected="plat_Selected">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="TelevisionBox" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <!--<materialDesign:PackIcon Kind="TelevisionBox" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Plataformas" Foreground="White" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="58">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Movie" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <!--<materialDesign:PackIcon Kind="Movie" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Peliculas" Foreground="White" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="58">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Play" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <!--<materialDesign:PackIcon Kind="Play" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Series" Foreground="White" Width="37" Height="25" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="58">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="GamepadClassic" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <!--<materialDesign:PackIcon Kind="GamepadClassic" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Juegos" Foreground="White" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="58">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="BookOpenPageVariant" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
+                            <!--<materialDesign:PackIcon Kind="BookOpenPageVariant" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <TextBlock Text="Libros" Foreground="White" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
