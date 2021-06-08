@@ -109,5 +109,15 @@ namespace UI
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void txt_id_plataforma_KeyDown(object sender, KeyEventArgs e)
+        {
+            //solo acepta enteros
+            
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 }
