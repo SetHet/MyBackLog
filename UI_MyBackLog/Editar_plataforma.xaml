@@ -6,7 +6,7 @@
         
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="463.125" Width="490.625" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png">
+        Title="MyBackLog" Height="463.125" Width="490.625" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png" ResizeMode="NoResize">
     <Grid Background="#FF4C1130" Margin="0,0,0,-1">
         <Label Content="Editar plataforma" HorizontalAlignment="Left" Margin="148,0,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Ingresar id plataforma" HorizontalAlignment="Left" Margin="32,71,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>

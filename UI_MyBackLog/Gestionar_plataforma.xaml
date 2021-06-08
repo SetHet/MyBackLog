@@ -6,7 +6,7 @@
         
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog Gestionar plataforma" Height="564.851" Width="800" WindowStartupLocation="CenterScreen" Background="#FF4C1130" Icon="Assets/ojo_celeste.png">
+        Title="MyBackLog Gestionar plataforma" Height="564.851" Width="800" WindowStartupLocation="CenterScreen" Background="#FF4C1130" Icon="Assets/ojo_celeste.png" ResizeMode="NoResize">
     <Grid>
         <Grid Visibility="Visible" x:Name="grid_principal" HorizontalAlignment="Left" Height="486" Margin="50,0,0,0" VerticalAlignment="Top" Width="742">
             <Grid.ColumnDefinitions>

@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="450" Width="596.562" Background="#FF4C1130" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png">
+        Title="MyBackLog" Height="450" Width="596.562" Background="#FF4C1130" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png" ResizeMode="NoResize">
     <Grid>
 
         <Label Content="Agregar plataforma" HorizontalAlignment="Left" Margin="195,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF" Grid.ColumnSpan="2" Height="37" Width="198"/>
