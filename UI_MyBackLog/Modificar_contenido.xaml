@@ -6,10 +6,10 @@
         
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="569.333" Width="906" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png" ResizeMode="NoResize">
+        Title="MyBackLog" Height="569.333" Width="870.667" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png" ResizeMode="NoResize">
 
     <Grid Background="#FF4C1130">
-        <DataGrid x:Name="info" HorizontalAlignment="Left" Height="320" Margin="201,203,0,0" VerticalAlignment="Top" Width="485" IsReadOnly="True" SelectionMode="Single">
+        <DataGrid x:Name="info" HorizontalAlignment="Left" Height="420" Margin="207,103,0,0" VerticalAlignment="Top" Width="463" IsReadOnly="True" SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id Contenido" Binding="{Binding Path=Id_contenido}"/>
                 <DataGridTextColumn Header="Titulo" Binding="{Binding Path=Titulo}"/>
@@ -18,7 +18,6 @@
                 <DataGridTextColumn Header="Plataforma" Binding="{Binding Path=Id_plataforma}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Modificar contenido" HorizontalAlignment="Left" Margin="330,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
 
         <Grid x:Name="GridMenu" Width="180" HorizontalAlignment="Left" Background="#FF666666">
             <StackPanel>
@@ -90,23 +89,23 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="699,142,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="modificar_contenido_Click"/>
-        <Button x:Name="agregar_contenido" Content="Agregar contenido" HorizontalAlignment="Left" Margin="699,79,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="agregar_contenido_Click"/>
-        <Button x:Name="deletecontent" Content="Eliminar contenido" HorizontalAlignment="Left" Margin="699,203,0,0" VerticalAlignment="Top" Width="175" Height="36" Background="#FF666666" Click="deletecontent_Click"/>
-        <Label Content="Filtrar por tipo" Foreground="White" HorizontalAlignment="Left" Margin="201,89,0,0" VerticalAlignment="Top"/>
-        <Label Content="Filtrar por calificacion" Foreground="White" HorizontalAlignment="Left" Margin="360,89,0,0" VerticalAlignment="Top"/>
-        <Label Content="Filtrar por plataforma" Foreground="White" HorizontalAlignment="Left" Margin="541,89,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboCatFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="201,127,0,0" VerticalAlignment="Top" Width="128">
+        <Button x:Name="modificar_contenido" Content="modificar contenido" HorizontalAlignment="Left" Margin="700,162,0,0" VerticalAlignment="Top" Width="130" Height="36" Background="#FF666666" Click="modificar_contenido_Click"/>
+        <Button x:Name="agregar_contenido" Content="Agregar contenido" HorizontalAlignment="Left" Margin="700,103,0,0" VerticalAlignment="Top" Width="130" Height="36" Background="#FF666666" Click="agregar_contenido_Click"/>
+        <Button x:Name="deletecontent" Content="Eliminar contenido" HorizontalAlignment="Left" Margin="700,221,0,0" VerticalAlignment="Top" Width="130" Height="36" Background="#FF666666" Click="deletecontent_Click"/>
+        <Label Content="Filtrar por tipo" Foreground="White" HorizontalAlignment="Left" Margin="207,24,0,0" VerticalAlignment="Top"/>
+        <Label Content="Filtrar por calificacion" Foreground="White" HorizontalAlignment="Left" Margin="346,24,0,0" VerticalAlignment="Top"/>
+        <Label Content="Filtrar por plataforma" Foreground="White" HorizontalAlignment="Left" Margin="484,24,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboCatFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="207,55,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem Content="Sin Filtro" HorizontalAlignment="Left" Width="126" IsSelected="True"/>
             <ComboBoxItem Content="Pelicula" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Juego" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Libro" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="Serie" HorizontalAlignment="Left" Width="126"/>
         </ComboBox>
-        <ComboBox x:Name="cboPlatFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="536,127,0,0" VerticalAlignment="Top" Width="128">
+        <ComboBox x:Name="cboPlatFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="484,55,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem  Content="Sin Filtro" HorizontalAlignment="Left" Width="126" IsSelected="True"/>
         </ComboBox>
-        <ComboBox x:Name="cboEstFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="360,127,0,0" VerticalAlignment="Top" Width="128">
+        <ComboBox x:Name="cboEstFiltro" Foreground="Black" Background="White" HorizontalAlignment="Left" Margin="346,55,0,0" VerticalAlignment="Top" Width="128">
             <ComboBoxItem  Content="Sin Filtro" HorizontalAlignment="Left" Width="126" IsSelected="True"/>
             <ComboBoxItem Content="1 estrella" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="2 estrellas" HorizontalAlignment="Left" Width="126"/>
@@ -114,6 +113,6 @@
             <ComboBoxItem Content="4 estrellas" HorizontalAlignment="Left" Width="126"/>
             <ComboBoxItem Content="5 estrellas" HorizontalAlignment="Left" Width="126"/>
         </ComboBox>
-        <Button x:Name="filtrado" Content="Agregar filtros" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Width="175" Height="27" Background="#FF666666" Click="filtrado_Click"/>
+        <Button x:Name="filtrado" Content="Filtrar" HorizontalAlignment="Left" Margin="623,55,0,0" VerticalAlignment="Top" Width="47" Height="22" Background="#FF666666" Click="filtrado_Click"/>
     </Grid>
 </Window>
