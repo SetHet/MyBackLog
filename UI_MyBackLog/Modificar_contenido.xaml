@@ -6,7 +6,7 @@
         
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="569.333" Width="892" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png" ResizeMode="NoResize">
+        Title="MyBackLog" Height="569.333" Width="906" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png" ResizeMode="NoResize">
 
     <Grid Background="#FF4C1130">
         <DataGrid x:Name="info" HorizontalAlignment="Left" Height="320" Margin="201,203,0,0" VerticalAlignment="Top" Width="485" IsReadOnly="True" SelectionMode="Single">
