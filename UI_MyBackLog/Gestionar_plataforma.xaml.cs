@@ -88,6 +88,13 @@ namespace UI
         {
             MessageBox.Show("Click");
         }
+
+        private void contenido_back_Click(object sender, RoutedEventArgs e)
+        {
+            Modificar_contenido modificar = new Modificar_contenido();
+            modificar.Show();
+            this.Close();
+        }
     }
 
 }
