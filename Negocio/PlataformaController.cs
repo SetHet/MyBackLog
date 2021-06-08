@@ -45,16 +45,30 @@ namespace Negocio
         public static List<Datos.Plataforma> listaPlataformas()
         {
             List<Datos.Plataforma> lista = new List<Plataforma>();
-            List<object[]> lista_codificada = verPlataforma();
-
-            foreach (var row in lista_codificada)
+            List<object[]> lista_codificada = null;
+            lista_codificada = verPlataforma();
+            if (lista_codificada != null) 
             {
-                Datos.Plataforma plataforma = new Plataforma();
-                plataforma.Id_plataforma = int.Parse(row[0].ToString());
-                plataforma.Titulo = (string)row[1];
-                plataforma.Descripcion = (string)row[2];
-                lista.Add(plataforma);
+                try
+                {
+                    foreach (var row in lista_codificada)
+                    {
+                        Datos.Plataforma plataforma = new Plataforma
+                        {
+                            Id_plataforma = int.Parse(row[0].ToString()),
+                            Titulo = (string)row[1],
+                            Descripcion = (string)row[2]
+                        };
+                        lista.Add(plataforma);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
             }
+
 
             return lista;
         }
