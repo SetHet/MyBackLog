@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MyBackLog" Height="760.625" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MyBackLog" Height="760.625" Width="800" WindowStartupLocation="CenterScreen" Icon="Assets/ojo_celeste.png">
     <Grid Background="#FF4C1130">
         <Label Name="Titulo" Content="Agregar o editar contenido" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="#DDFFFFFF"/>
         <Label Content="Titulo" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
