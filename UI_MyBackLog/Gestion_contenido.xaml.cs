@@ -192,12 +192,9 @@ namespace UI
 
         private void aceptar_editar_Click(object sender, RoutedEventArgs e)
         {
-            if (true)
-            {
-
-            }
+            
             //Crear Contenido
-            else if(modo == Modo.create)
+            if(modo == Modo.create)
             {
                 contenido = new Contenido();
 
@@ -889,6 +886,14 @@ namespace UI
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void Txt_Horas_Inversion_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Txt_Horas_Inversion.Text == "0")
+            {
+                MessageBox.Show("la hora no puede ser 0");
+            }
         }
     }
 }

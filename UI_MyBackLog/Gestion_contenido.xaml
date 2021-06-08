@@ -23,7 +23,7 @@
         </ComboBox>
 
         <Label Content="Editar horas inversion" HorizontalAlignment="Left" Margin="13,328,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <TextBox MaxLength="5" x:Name="Txt_Horas_Inversion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="13,367,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="76" KeyDown="Txt_Horas_Inversion_KeyDown" />
+        <TextBox MaxLength="5" x:Name="Txt_Horas_Inversion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="13,367,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="76" KeyDown="Txt_Horas_Inversion_KeyDown" TextChanged="Txt_Horas_Inversion_TextChanged" />
         <Label Content="Hrs." HorizontalAlignment="Left" Margin="94,362,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Height="28"/>
         <Label Content="Plataforma" HorizontalAlignment="Left" Margin="14,395,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
         <ComboBox Foreground="Black" Background="White" x:Name="ComboBox_Plataforma" HorizontalAlignment="Left" Margin="14,434,0,0" VerticalAlignment="Top" Width="256"/>
@@ -43,9 +43,9 @@
 
         <Grid Visibility="Collapsed" x:Name="pelicula_grid" HorizontalAlignment="Left" Height="332" Margin="421,164,0,0" VerticalAlignment="Top" Width="350">
             <Label Content="Agregar duracion (en minutos)" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <TextBox MaxLength="6" x:Name="Txt_Pelicula_Duracion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" KeyDown="Txt_Pelicula_Duracion_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Pelicula_Duracion" Foreground="Black" Background="White" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="162" KeyDown="Txt_Pelicula_Duracion_KeyDown"/>
             <Label Content="Minutos vistos" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-            <TextBox MaxLength="6" x:Name="Txt_Pelicula_Minuto" HorizontalAlignment="Left" Foreground="Black" Background="White" Height="23" Margin="10,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" KeyDown="Txt_Pelicula_Minuto_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Pelicula_Minuto" HorizontalAlignment="Left" Foreground="Black" Background="White" Height="23" Margin="10,186,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="162" KeyDown="Txt_Pelicula_Minuto_KeyDown"/>
         </Grid>
         <Grid x:Name="grid_juego" Visibility="Collapsed" HorizontalAlignment="Left" Height="448" Margin="421,181,0,0" VerticalAlignment="Top" Width="341">
             <DataGrid Name="DataGrid_juego_tabla" HorizontalAlignment="Left" Height="418" VerticalAlignment="Top" Width="331"
@@ -56,21 +56,21 @@
         </Grid>
         <Grid x:Name="grid_serie" Visibility="Collapsed" HorizontalAlignment="Left" Height="387" Margin="421,190,0,0" VerticalAlignment="Top" Width="341">
             <Label Content="Tiempo de los capitulos (en minutos)" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,2,0,0" VerticalAlignment="Top"/>
-            <TextBox MaxLength="6" x:Name="Txt_Tiempo_Capitulos" HorizontalAlignment="Left" Height="23" Margin="7,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Tiempo_Capitulos_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Tiempo_Capitulos" HorizontalAlignment="Left" Height="23" Margin="7,41,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Tiempo_Capitulos_KeyDown"/>
             <Label Content="Agregar capitulos temporadas" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,78,0,0" VerticalAlignment="Top"/>
-            <TextBox MaxLength="6" x:Name="Txt_Capitulos_Temporada" HorizontalAlignment="Left" Height="23" Margin="7,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Capitulos_Temporada_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Capitulos_Temporada" HorizontalAlignment="Left" Height="23" Margin="7,117,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Capitulos_Temporada_KeyDown"/>
             <Label Content="Agregar temporada actual" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,153,0,0" VerticalAlignment="Top"/>
-            <TextBox MaxLength="6" x:Name="Txt_Temporada" HorizontalAlignment="Left" Height="23" Margin="7,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Temporada_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Temporada" HorizontalAlignment="Left" Height="23" Margin="7,192,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Temporada_KeyDown"/>
             <Label Content="Agregar capitulo actual" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,231,0,0" VerticalAlignment="Top"/>
-            <TextBox MaxLength="6" x:Name="Txt_Capitulo" HorizontalAlignment="Left" Height="23" Margin="7,272,0,-20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Capitulo_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Capitulo" HorizontalAlignment="Left" Height="23" Margin="7,272,0,-20" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_Capitulo_KeyDown"/>
             <Label Content="Agregar minuto actual" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="7,300,0,-59" VerticalAlignment="Top"/>
-            <TextBox MaxLength="6" x:Name="Txt_MinutoSerie" HorizontalAlignment="Left" Height="23" Margin="7,339,0,-87" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_MinutoSerie_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_MinutoSerie" HorizontalAlignment="Left" Height="23" Margin="7,339,0,-87" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="232" Foreground="Black" Background="White" KeyDown="Txt_MinutoSerie_KeyDown"/>
         </Grid>
         <Grid x:Name="grid_libro" Visibility="Collapsed" HorizontalAlignment="Left" Height="262" Margin="420,167,0,0" VerticalAlignment="Top" Width="351">
             <Label Content="Agregar cantidad de paginas" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.424,-0.745"/>
-            <TextBox MaxLength="6" x:Name="Txt_Libro_CantidadPaginas" HorizontalAlignment="Left" Height="23" Margin="10,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="Black" Background="White" KeyDown="Txt_Libro_CantidadPaginas_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Libro_CantidadPaginas" HorizontalAlignment="Left" Height="23" Margin="10,53,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="158" Foreground="Black" Background="White" KeyDown="Txt_Libro_CantidadPaginas_KeyDown"/>
             <Label Content="Pagina actual" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top"/>
-            <TextBox MaxLength="6" x:Name="Txt_Libro_PaginaActual" HorizontalAlignment="Left" Height="23" Margin="10,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Foreground="Black" Background="White" KeyDown="Txt_Libro_PaginaActual_KeyDown"/>
+            <TextBox MaxLength="6" x:Name="Txt_Libro_PaginaActual" HorizontalAlignment="Left" Height="23" Margin="10,164,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="158" Foreground="Black" Background="White" KeyDown="Txt_Libro_PaginaActual_KeyDown"/>
         </Grid>
 
     </Grid>
