@@ -23,14 +23,46 @@ namespace UI
     {
         private List<Contenido> contenidos;
         public List<Plataforma> lista_plataformas;
+        public List<Contenido2> contenidos2;
         public string filtroB = "";
 
+
+        public class Contenido2
+        {
+            private int id_contenido;
+            private string titulo;
+            private int calificacion;
+            private int horasInversion;
+            private string plataforma;
+
+            public int Id_contenido { get => id_contenido; set => id_contenido = value; }
+            public string Titulo { get => titulo; set => titulo = value; }
+            public int Calificacion { get => calificacion; set => calificacion = value; }
+            public int HorasInversion { get => horasInversion; set => horasInversion = value; }
+            public string Plataforma { get => plataforma; set => plataforma = value; }
+
+            public Contenido2(Contenido x, List<Plataforma> plataformas)
+            {
+                Id_contenido = x.Id_contenido;
+                Titulo = x.Titulo;
+                Calificacion = x.Calificacion;
+                HorasInversion = x.Horas_inversion;
+                foreach (var plat in plataformas)
+                {
+                    if (x.Id_plataforma == plat.Id_plataforma)
+                    {
+                        Plataforma = plat.Titulo;
+                        break;
+                    }
+                }
+            }
+        }
 
         public Modificar_contenido()
         {
             InitializeComponent();
-            Llenar();
             LlenarPlat();
+            Llenar();
         }
 
         private void Llenar()
@@ -77,9 +109,22 @@ namespace UI
             {
                 foreach (var item in contenidos)
                 {
-                    info.Items.Add(item);
+                    info.Items.Add(new Contenido2(item, lista_plataformas));
                 }
+                
             }
+
+            //Cambiar Titulos
+            if (info.Columns.Count > 0)
+            {
+                info.Columns[0].Header = "#";
+                info.Columns[3].Header = "Hrs";
+                info.Columns[2].Header = "★";
+
+                info.Columns[1].Width = new DataGridLength(0.6, DataGridLengthUnitType.Star);
+                info.Columns[4].Width = new DataGridLength(0.15, DataGridLengthUnitType.Star);
+            }
+
         }
         private void LlenarPlat()
         {
@@ -109,7 +154,7 @@ namespace UI
             }
             else
             {
-                Contenido row = info.SelectedItem as Contenido;
+                Contenido2 row = info.SelectedItem as Contenido2;
                 if (Negocio.ContenidoController.deleteContenido(row.Id_contenido))
                 {
                     Console.WriteLine("Eliminar");
@@ -127,7 +172,7 @@ namespace UI
                 MessageBox.Show("Se debe seleccionar un contenido", "Aviso", MessageBoxButton.OK, MessageBoxImage.Stop);
                 return;
             }
-            Contenido row = info.SelectedItem as Contenido;
+            Contenido2 row = info.SelectedItem as Contenido2;
             Gestion_contenido editar = new Gestion_contenido(row.Id_contenido);
             editar.Show();
             this.Close();

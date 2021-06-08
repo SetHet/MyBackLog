@@ -13,9 +13,9 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id Contenido" Binding="{Binding Path=Id_contenido}"/>
                 <DataGridTextColumn Header="Titulo" Binding="{Binding Path=Titulo}"/>
-                <DataGridTextColumn Header="Horas de Inversion" Binding="{Binding Path=Horas_inversion}"/>
                 <DataGridTextColumn Header="Calificación" Binding="{Binding Path=Calificacion}"/>
-                <DataGridTextColumn Header="Plataforma" Binding="{Binding Path=Id_plataforma}"/>
+                <DataGridTextColumn Header="Horas de Inversion" Binding="{Binding Path=HorasInversion}"/>
+                <DataGridTextColumn Header="Plataforma" Binding="{Binding Path=Plataforma}"/>
             </DataGrid.Columns>
         </DataGrid>
 
