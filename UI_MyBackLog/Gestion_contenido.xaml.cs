@@ -199,11 +199,17 @@ namespace UI
                 #region TextBox
                 contenido.Titulo = Txt_Titulo.Text;
                 contenido.Descripcion = Txt_Descripcion.Text;
-                contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
                 #endregion
 
                 #region ComboBox
+                if (ComboBox_Calificacion.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Se debe seleccionar una Calificacion", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
+
                 if (ComboBox_Plataforma.SelectedIndex != -1)
                 {
                     contenido.Id_plataforma = lista_plataformas[ComboBox_Plataforma.SelectedIndex].Id_plataforma;
@@ -387,11 +393,18 @@ namespace UI
                 contenido.Id_contenido = id_contenido;
                 contenido.Titulo = Txt_Titulo.Text;
                 contenido.Descripcion = Txt_Descripcion.Text;
-                contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
+                //contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
                 #endregion
 
                 #region ComboBox
+                if (ComboBox_Calificacion.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Se debe seleccionar una Calificacion", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
+
                 if (ComboBox_Plataforma.SelectedIndex != -1)
                 {
                     contenido.Id_plataforma = lista_plataformas[ComboBox_Plataforma.SelectedIndex].Id_plataforma;
