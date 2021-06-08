@@ -53,7 +53,7 @@ namespace UI
             };
             if (Negocio.PlataformaController.insertarPlataforma(plataforma))
             {
-                MessageBox.Show("Insertado con éxtio");
+                //MessageBox.Show("Insertado con éxtio");
             }
             else
             {

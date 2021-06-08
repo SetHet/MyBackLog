@@ -87,7 +87,7 @@ namespace UI
 
             if (Negocio.PlataformaController.updatePlataforma(plataforma))
             {
-                MessageBox.Show("Plataforma actualizada");
+                //MessageBox.Show("Plataforma actualizada");
                 cancelar_edit_Click(sender, e);
             }
             else
