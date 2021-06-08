@@ -109,7 +109,8 @@ namespace UI
             }
             else
             {
-                if (Negocio.ContenidoController.deleteContenido(contenidos[select].Id_contenido))
+                Contenido row = info.SelectedItem as Contenido;
+                if (Negocio.ContenidoController.deleteContenido(row.Id_contenido))
                 {
                     Console.WriteLine("Eliminar");
                 }
@@ -126,8 +127,8 @@ namespace UI
                 MessageBox.Show("Se debe seleccionar un contenido", "Aviso", MessageBoxButton.OK, MessageBoxImage.Stop);
                 return;
             }
-            
-            Gestion_contenido editar = new Gestion_contenido(contenidos[select].Id_contenido);
+            Contenido row = info.SelectedItem as Contenido;
+            Gestion_contenido editar = new Gestion_contenido(row.Id_contenido);
             editar.Show();
             this.Close();
         }

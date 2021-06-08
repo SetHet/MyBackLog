@@ -53,7 +53,7 @@ namespace UI
         private void editplataforma_Click(object sender, RoutedEventArgs e)
         {
             int index = grid_datos.SelectedIndex;
-            int id = index > -1 ? ListPlataforma[index].Id_plataforma : -1;
+            int id = index > -1 ? (grid_datos.SelectedItem as Datos.Plataforma).Id_plataforma : -1;
             Editar_plataforma editar_Plataforma = new Editar_plataforma(id);
             editar_Plataforma.Show();
             this.Close();
@@ -72,7 +72,7 @@ namespace UI
                 return;
             }
 
-            Negocio.PlataformaController.eliminarPlataforma(ListPlataforma[select].Id_plataforma);
+            Negocio.PlataformaController.eliminarPlataforma((grid_datos.SelectedItem as Datos.Plataforma).Id_plataforma);
 
             Listar();
         }
