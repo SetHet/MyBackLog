@@ -83,10 +83,6 @@
       <Project>{244650a7-4426-4192-bcb2-0d930384638c}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UI\UI.csproj">
-      <Project>{c0904c1f-b76f-44c5-a88f-6d921e228dd2}</Project>
-      <Name>UI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
