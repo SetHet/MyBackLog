@@ -12,7 +12,7 @@
         <Label Content="Ingresar id plataforma" HorizontalAlignment="Left" Margin="32,71,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
         <Label Content="Editar descripcion" HorizontalAlignment="Left" Margin="41,257,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
         <Label Content="Editar titulo" HorizontalAlignment="Left" Margin="32,166,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
-        <TextBox x:Name="txt_id_plataforma" PreviewTextInput="txt_id_plataforma_PreviewTextInput" Foreground="black" Background="White" HorizontalAlignment="Left" Height="23" Margin="41,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" MaxLength="20"/>
+        <TextBox x:Name="txt_id_plataforma" PreviewTextInput="txt_id_plataforma_PreviewTextInput" Foreground="black" Background="White" HorizontalAlignment="Left" Height="23" Margin="41,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" MaxLength="20" IsReadOnly="True"/>
         <TextBox x:Name="txt_titulo" Foreground="black" Background="White" HorizontalAlignment="Left" Height="23" Margin="41,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"  MaxLength="40" />
         <TextBox x:Name="txt_descripcion" Foreground="black" Background="White" HorizontalAlignment="Left" Height="64" Margin="41,297,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" MaxLength="100"/>
         <Button x:Name="aceptar_edit" Content="Aceptar" HorizontalAlignment="Left" Margin="74,400,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="#FF666666" Click="aceptar_edit_Click"/>

@@ -43,6 +43,11 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Volver a Ver Contenidos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Agregar_plataforma add_plataforma = new Agregar_plataforma();
@@ -53,6 +58,11 @@ namespace UI
         private void editplataforma_Click(object sender, RoutedEventArgs e)
         {
             int index = grid_datos.SelectedIndex;
+            if (index == -1)
+            {
+                MessageBox.Show("Seleccione una Plataforma");
+                return;
+            }
             int id = index > -1 ? (grid_datos.SelectedItem as Datos.Plataforma).Id_plataforma : -1;
             Editar_plataforma editar_Plataforma = new Editar_plataforma(id);
             editar_Plataforma.Show();
