@@ -297,5 +297,11 @@ namespace UI
             filtroB = "";
             Filtrado(0, 0, "Libro");
         }
+
+        private void MyBackLog_Title_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            filtroB = "";
+            Llenar();
+        }
     }
 }
