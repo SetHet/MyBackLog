@@ -200,6 +200,13 @@ namespace UI
 
                 #region TextBox
                 contenido.Titulo = Txt_Titulo.Text;
+
+                if (contenido.Titulo == "")
+                {
+                    MessageBox.Show("Asigne un Titulo al Contenido", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 contenido.Descripcion = Txt_Descripcion.Text;
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
                 #endregion
@@ -395,6 +402,13 @@ namespace UI
                 #region TextBox
                 contenido.Id_contenido = id_contenido;
                 contenido.Titulo = Txt_Titulo.Text;
+
+                if (contenido.Titulo == "")
+                {
+                    MessageBox.Show("Asigne un Titulo al Contenido", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 contenido.Descripcion = Txt_Descripcion.Text;
                 //contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
