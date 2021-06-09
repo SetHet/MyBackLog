@@ -26,21 +26,21 @@
                 </Grid>
                 <Grid Height="182">
                     <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#FF5F5F5F" >
-                        <ListViewItem Height="58" Name="Nav_QueEstoyViendo" MouseDoubleClick="Nav_QueEstoyViendo_MouseDoubleClick">
+                        <ListViewItem Height="58" Name="Nav_QueEstoyViendo" PreviewMouseLeftButtonDown="Nav_QueEstoyViendo_MouseDoubleClick">
                             <StackPanel Orientation="Horizontal">
                                 <!--<materialDesign:PackIcon Kind="Eye" Foreground="SkyBlue" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>-->
                                 <Image Source="Assets/ojo_celeste.png" Height="25" Width="50"></Image>
                                 <TextBlock Text="¿Que estoy viendo?" Foreground="White" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="58" Name="Nav_Sugerencias" MouseDoubleClick="Nav_Sugerencias_MouseDoubleClick">
+                        <ListViewItem Height="58" Name="Nav_Sugerencias" PreviewMouseLeftButtonDown="Nav_Sugerencias_MouseDoubleClick">
                             <StackPanel Orientation="Horizontal">
                                 <!--<materialDesign:PackIcon Kind="Lightbulb" Foreground="Yellow" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                                 <Image Source="Assets/luz.png" Height="25" Width="50"></Image>
                                 <TextBlock Text="Sugerencias" Foreground="White" VerticalAlignment="Center"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="58" Name="Nav_Pendiente" MouseDoubleClick="Nav_Pendiente_MouseDoubleClick">
+                        <ListViewItem Height="58" Name="Nav_Pendiente" PreviewMouseLeftButtonDown="Nav_Pendiente_MouseDoubleClick">
                             <StackPanel Orientation="Horizontal">
                                 <!--<materialDesign:PackIcon Kind="Clock" Foreground="#FF932C2C" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                                 <Image Source="Assets/reloj.png" Height="25" Width="50"></Image>
@@ -58,28 +58,28 @@
                         </StackPanel>
                     </ListViewItem>
 
-                    <ListViewItem Height="58" Name="Nav_Peliculas" MouseDoubleClick="Nav_Peliculas_MouseDoubleClick">
+                    <ListViewItem Height="58" Name="Nav_Peliculas" PreviewMouseLeftButtonDown="Nav_Peliculas_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Foreground="Black" Kind="Movie" Width="25" Height="35" VerticalAlignment="Center" Margin="10"/>-->
                             <Image Source="Assets/pelicula.png" Height="25" Width="50"></Image>
                             <TextBlock Text="Peliculas" Foreground="White" Width="50" Height="25" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58" Name="Nav_Serie" MouseDoubleClick="Nav_Serie_MouseDoubleClick">
+                    <ListViewItem Height="58" Name="Nav_Serie" PreviewMouseLeftButtonDown="Nav_Serie_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Kind="Play" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <Image Source="Assets/serie.png" Height="25" Width="50"></Image>
                             <TextBlock Text="Series" Foreground="White" Width="37" Height="25" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58" Name="Nav_Juego" MouseDoubleClick="Nav_Juego_MouseDoubleClick">
+                    <ListViewItem Height="58" Name="Nav_Juego" PreviewMouseLeftButtonDown="Nav_Juego_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Kind="GamepadClassic" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <Image Source="Assets/cruz.png" Height="25" Width="50"></Image>
                             <TextBlock Text="Juegos" Foreground="White" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="58" Name="Nav_Libro" MouseDoubleClick="Nav_Libro_MouseDoubleClick">
+                    <ListViewItem Height="58" Name="Nav_Libro" PreviewMouseLeftButtonDown="Nav_Libro_MouseDoubleClick">
                         <StackPanel Orientation="Horizontal">
                             <!--<materialDesign:PackIcon Kind="BookOpenPageVariant" Foreground="Black" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>-->
                             <Image Source="Assets/libro.png" Height="25" Width="50"></Image>
