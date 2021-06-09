@@ -192,6 +192,7 @@ namespace UI
 
         private void aceptar_editar_Click(object sender, RoutedEventArgs e)
         {
+            int v; //Simplemente como utilidad para analisis de los imput numerico
             
             //Crear Contenido
             if(modo == Modo.create)
@@ -200,7 +201,6 @@ namespace UI
 
                 #region TextBox
                 contenido.Titulo = Txt_Titulo.Text;
-
                 if (contenido.Titulo == "")
                 {
                     MessageBox.Show("Asigne un Titulo al Contenido", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -208,7 +208,14 @@ namespace UI
                 }
 
                 contenido.Descripcion = Txt_Descripcion.Text;
+                
+                if (!int.TryParse(Txt_Horas_Inversion.Text, out v))
+                {
+                    MessageBox.Show("Ingrese un valor entero en Horas Invertir", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
+                
                 #endregion
 
                 #region ComboBox
@@ -265,7 +272,18 @@ namespace UI
                 if (subtipo_cbo.SelectedIndex == 0)
                 {
                     libro = new Libro();
+                    if (!int.TryParse(Txt_Libro_CantidadPaginas.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Cantidad de Paginas", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     libro.Cantidad_paginas = int.Parse(Txt_Libro_CantidadPaginas.Text);
+
+                    if (!int.TryParse(Txt_Libro_PaginaActual.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Pagina Actual", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     libro.Pagina = int.Parse(Txt_Libro_PaginaActual.Text);
                 }
                 #endregion
@@ -274,7 +292,19 @@ namespace UI
                 if (subtipo_cbo.SelectedIndex == 1)
                 {
                     pelicula = new Pelicula();
+
+                    if (!int.TryParse(Txt_Pelicula_Duracion.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Pelicula Duracion", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     pelicula.Duracion_minutos = int.Parse(Txt_Pelicula_Duracion.Text);
+
+                    if (!int.TryParse(Txt_Pelicula_Minuto.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Pelicula Minuto", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     pelicula.Minuto = int.Parse(Txt_Pelicula_Minuto.Text);
                 }
                 #endregion
@@ -283,11 +313,42 @@ namespace UI
                 if (subtipo_cbo.SelectedIndex == 2)
                 {
                     serie = new Serie();
+
+                    if (!int.TryParse(Txt_Tiempo_Capitulos.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Tiempo Capitulos", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Tiempo_capitulo = int.Parse(Txt_Tiempo_Capitulos.Text);
+
+                    if (!int.TryParse(Txt_Capitulos_Temporada.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Capitulos Temporada", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Capitulos_temporada = int.Parse(Txt_Capitulos_Temporada.Text);
+
+                    if (!int.TryParse(Txt_Temporada.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Temporada", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Temporada = int.Parse(Txt_Temporada.Text);
+
+                    if (!int.TryParse(Txt_Capitulo.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Capitulo", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Capitulo = int.Parse(Txt_Capitulo.Text);
+
+                    if (!int.TryParse(Txt_MinutoSerie.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Minuto", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Minuto = int.Parse(Txt_MinutoSerie.Text);
+
                 }
                 #endregion
 
@@ -411,6 +472,12 @@ namespace UI
 
                 contenido.Descripcion = Txt_Descripcion.Text;
                 //contenido.Calificacion = ComboBox_Calificacion.SelectedIndex + 1;
+
+                if (!int.TryParse(Txt_Horas_Inversion.Text, out v))
+                {
+                    MessageBox.Show("Ingrese un valor entero en Horas Inversion", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 contenido.Horas_inversion = int.Parse(Txt_Horas_Inversion.Text);
                 #endregion
 
@@ -469,7 +536,18 @@ namespace UI
                 if (subtipo_cbo.SelectedIndex == 0)
                 {
                     libro = new Libro();
+                    if (!int.TryParse(Txt_Libro_CantidadPaginas.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Cantidad de Paginas", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     libro.Cantidad_paginas = int.Parse(Txt_Libro_CantidadPaginas.Text);
+
+                    if (!int.TryParse(Txt_Libro_PaginaActual.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Pagina Actual", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     libro.Pagina = int.Parse(Txt_Libro_PaginaActual.Text);
                 }
                 #endregion
@@ -478,20 +556,63 @@ namespace UI
                 if (subtipo_cbo.SelectedIndex == 1)
                 {
                     pelicula = new Pelicula();
+
+                    if (!int.TryParse(Txt_Pelicula_Duracion.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Pelicula Duracion", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     pelicula.Duracion_minutos = int.Parse(Txt_Pelicula_Duracion.Text);
+
+                    if (!int.TryParse(Txt_Pelicula_Minuto.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Pelicula Minuto", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     pelicula.Minuto = int.Parse(Txt_Pelicula_Minuto.Text);
                 }
                 #endregion
-                
+
                 #region Serie
                 if (subtipo_cbo.SelectedIndex == 2)
                 {
                     serie = new Serie();
+
+                    if (!int.TryParse(Txt_Tiempo_Capitulos.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Tiempo Capitulos", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Tiempo_capitulo = int.Parse(Txt_Tiempo_Capitulos.Text);
+
+                    if (!int.TryParse(Txt_Capitulos_Temporada.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Capitulos Temporada", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Capitulos_temporada = int.Parse(Txt_Capitulos_Temporada.Text);
+
+                    if (!int.TryParse(Txt_Temporada.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Temporada", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Temporada = int.Parse(Txt_Temporada.Text);
+
+                    if (!int.TryParse(Txt_Capitulo.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Capitulo", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Capitulo = int.Parse(Txt_Capitulo.Text);
+
+                    if (!int.TryParse(Txt_MinutoSerie.Text, out v))
+                    {
+                        MessageBox.Show("Ingrese un valor entero en Serie, Minuto", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
                     serie.Minuto = int.Parse(Txt_MinutoSerie.Text);
+
                 }
                 #endregion
 
