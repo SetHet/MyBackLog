@@ -65,10 +65,17 @@ namespace UI
             Llenar();
         }
 
-        private void Llenar()
+        private void Llenar(List<Contenido> lc = null)
         {
             info.Items.Clear();
-            contenidos = Negocio.ContenidoController.listarContenido();
+            if (lc != null)
+            {
+                contenidos = lc;
+            }
+            else
+            {
+                contenidos = Negocio.ContenidoController.listarContenido();
+            }
 
             //Filtros B
             if (filtroB == "Viendo")
@@ -237,10 +244,8 @@ namespace UI
                 }
                 if (contenidos != null)
                 {
-                    foreach (var item in contenidos)
-                    {
-                        info.Items.Add(item);
-                    }
+                    filtroB = "";
+                    Llenar(contenidos);
                 }
             }
             else
